@@ -272,10 +272,32 @@ ${prompt}`;
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             🚀 GPT-5 Prompting Toolkit
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
             Master GPT-5 with professional-grade prompting techniques based on OpenAI's official guide. 
             Build better agents, improve code quality, and achieve consistent results.
           </p>
+          
+          {/* Simple How-To-Use Guide */}
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 max-w-4xl mx-auto mb-6">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">✨ How to Use This Toolkit</h2>
+            <div className="grid md:grid-cols-3 gap-4 text-left">
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="text-2xl mb-2">1️⃣</div>
+                <h3 className="font-semibold text-gray-900 mb-2">Pick a Template</h3>
+                <p className="text-sm text-gray-600">Choose from 6 professional templates like Creative Writing, Technical Analysis, or Problem Solving</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="text-2xl mb-2">2️⃣</div>
+                <h3 className="font-semibold text-gray-900 mb-2">Fill the Blanks</h3>
+                <p className="text-sm text-gray-600">Replace variables like {`{topic}`} and {`{audience}`} with your specific content</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="text-2xl mb-2">3️⃣</div>
+                <h3 className="font-semibold text-gray-900 mb-2">Copy & Use</h3>
+                <p className="text-sm text-gray-600">Click "Generate", copy your optimized prompt, and paste it into ChatGPT or Claude</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Navigation Tabs */}
@@ -305,12 +327,20 @@ ${prompt}`;
           {/* Prompt Builder Tab */}
           {activeTab === 'builder' && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">🔧 Prompt Builder</h2>
+              <div className="flex items-center justify-between">
+                <h2 className="text-2xl font-bold text-gray-900">🔧 Prompt Builder</h2>
+                <div className="text-sm text-gray-500 bg-gray-50 px-3 py-2 rounded-lg">
+                  💡 Tip: Fill in all variables, then click "Generate Prompt" to get your optimized prompt!
+                </div>
+              </div>
               
               {/* Template Selection */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Select Template</h3>
+                  <div className="flex items-center gap-2 mb-3">
+                    <h3 className="text-lg font-semibold">1. Choose Your Template</h3>
+                    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Step 1</span>
+                  </div>
                   <div className="space-y-2 max-h-64 overflow-y-auto">
                     {promptTemplates.map((template) => (
                       <button
@@ -324,14 +354,26 @@ ${prompt}`;
                         }}
                         className={`w-full text-left p-3 rounded-lg border transition-all ${
                           selectedTemplate?.id === template.id
-                            ? 'border-blue-500 bg-blue-50'
+                            ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-200'
                             : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50'
                         }`}
                       >
                         <div className="font-medium text-gray-900">{template.name}</div>
                         <div className="text-sm text-gray-600">{template.description}</div>
+                        <div className="flex gap-2 mt-2">
+                          <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
+                            {template.category}
+                          </span>
+                          <span className={`text-xs px-2 py-1 rounded ${
+                            template.difficulty === 'Beginner' ? 'bg-green-100 text-green-700' :
+                            template.difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-700' :
+                            'bg-red-100 text-red-700'
+                          }`}>
+                            {template.difficulty}
+                          </span>
+                        </div>
                         <div className="text-xs text-blue-600 mt-1">
-                          {template.category} • {template.difficulty}
+                          Use case: {template.useCase.join(', ')}
                         </div>
                       </button>
                     ))}
@@ -340,64 +382,123 @@ ${prompt}`;
 
                 {/* Variable Inputs */}
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Variables</h3>
+                  <div className="flex items-center gap-2 mb-3">
+                    <h3 className="text-lg font-semibold">2. Fill in Details</h3>
+                    <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Step 2</span>
+                  </div>
                   {selectedTemplate ? (
                     <div className="space-y-3">
+                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
+                        <p className="text-sm text-blue-800">
+                          <strong>Selected:</strong> {selectedTemplate.name}
+                          <br />
+                          <span className="text-blue-600">{selectedTemplate.example}</span>
+                        </p>
+                      </div>
                       {selectedTemplate.variables.map((variable) => (
                         <div key={variable}>
                           <label className="block text-sm font-medium text-gray-700 mb-1">
                             {variable.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                            <span className="text-red-500">*</span>
                           </label>
                           <textarea
                             value={variables[variable] || ''}
                             onChange={(e) => setVariables({...variables, [variable]: e.target.value})}
-                            placeholder={`Enter ${variable.replace(/_/g, ' ')}...`}
+                            placeholder={`e.g., ${
+                              variable === 'topic' ? 'AI productivity tools' :
+                              variable === 'audience' ? 'small business owners' :
+                              variable === 'context' ? 'background information about your project' :
+                              variable === 'requirements' ? 'what specific output you need' :
+                              `describe your ${variable.replace(/_/g, ' ')}`
+                            }`}
                             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
-                            rows={3}
+                            rows={2}
                           />
                         </div>
                       ))}
+                      <div className="text-xs text-gray-500 mt-2">
+                        💡 Be specific! More details = better results
+                      </div>
                     </div>
                   ) : (
-                    <div className="text-center py-8 text-gray-500">
-                      Select a template to configure variables
+                    <div className="text-center py-12 text-gray-500 border-2 border-dashed border-gray-300 rounded-lg">
+                      <div className="text-4xl mb-2">👈</div>
+                      <p>Select a template from the left to get started</p>
+                      <p className="text-sm mt-1">Each template is designed for specific tasks</p>
                     </div>
                   )}
                 </div>
               </div>
 
               {/* Custom Prompt Input */}
-              <div>
-                <h3 className="text-lg font-semibold mb-3">Or Write Custom Prompt</h3>
+              <div className="border-t pt-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <h3 className="text-lg font-semibold">OR Write Custom Prompt</h3>
+                  <span className="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Advanced</span>
+                </div>
                 <textarea
                   value={customPrompt}
                   onChange={(e) => {
                     setCustomPrompt(e.target.value);
                     setSelectedTemplate(null);
                   }}
-                  placeholder="Write your custom prompt here..."
+                  placeholder="Write your own prompt from scratch... (This will override template selection)"
                   className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
-                  rows={6}
+                  rows={4}
                 />
               </div>
 
               {/* Generate Button */}
-              <div className="text-center">
+              <div className="text-center bg-gray-50 rounded-xl p-6">
+                <div className="flex items-center gap-2 justify-center mb-3">
+                  <h3 className="text-lg font-semibold">3. Generate Your Prompt</h3>
+                  <span className="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full">Step 3</span>
+                </div>
                 <button
                   onClick={generatePrompt}
-                  className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                  disabled={!selectedTemplate && !customPrompt.trim()}
+                  className={`px-8 py-3 rounded-lg font-semibold transition-colors ${
+                    selectedTemplate || customPrompt.trim()
+                      ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg transform hover:scale-105'
+                      : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                  }`}
                 >
-                  Generate Prompt
+                  🚀 Generate Professional Prompt
                 </button>
+                <p className="text-xs text-gray-500 mt-2">
+                  {selectedTemplate || customPrompt.trim() 
+                    ? 'Click to create your optimized prompt!' 
+                    : 'Select a template or write a custom prompt first'
+                  }
+                </p>
               </div>
 
               {/* Final Prompt Output */}
               {finalPrompt && (
-                <div>
-                  <div className="flex justify-between items-center mb-3">
-                    <h3 className="text-lg font-semibold">Generated Prompt</h3>
+                <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+                  <div className="flex justify-between items-center mb-4">
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-lg font-semibold text-green-900">✅ Your Professional Prompt</h3>
+                      <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Ready to use!</span>
+                    </div>
                     <button
                       onClick={() => copyToClipboard(finalPrompt)}
+                      className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2"
+                    >
+                      📋 Copy Prompt
+                    </button>
+                  </div>
+                  <div className="bg-white border border-green-300 rounded-lg p-4 font-mono text-sm max-h-96 overflow-y-auto">
+                    <pre className="whitespace-pre-wrap">{finalPrompt}</pre>
+                  </div>
+                  <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                    <p className="text-sm text-yellow-800">
+                      <strong>🎯 Next Steps:</strong> Copy this prompt and paste it into ChatGPT, Claude, or any AI tool. 
+                      The prompt is optimized for GPT-5 but works great with other AI models too!
+                    </p>
+                  </div>
+                </div>
+              )}
                       className="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors"
                     >
                       Copy
@@ -515,68 +616,114 @@ ${prompt}`;
           {/* Settings Tab */}
           {activeTab === 'settings' && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">⚙️ Model Settings</h2>
+              <div className="text-center">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">⚙️ Quick Settings</h2>
+                <p className="text-gray-600">Simple controls to optimize your prompts</p>
+              </div>
               
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-lg font-semibold mb-3">Reasoning Effort</h3>
-                    <div className="space-y-3">
-                      {(['minimal', 'medium', 'high'] as const).map((level) => (
-                        <label key={level} className="flex items-center space-x-3 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="reasoning_effort"
-                            value={level}
-                            checked={reasoning_effort === level}
-                            onChange={(e) => setReasoningEffort(e.target.value as any)}
-                            className="w-4 h-4 text-blue-600"
-                          />
-                          <div>
-                            <div className="font-medium capitalize">{level}</div>
-                            <div className="text-sm text-gray-600">
-                              {level === 'minimal' && 'Fastest response, good for simple tasks'}
-                              {level === 'medium' && 'Balanced performance (recommended)'}
-                              {level === 'high' && 'Deep analysis for complex problems'}
-                            </div>
-                          </div>
-                        </label>
-                      ))}
+              <div className="max-w-2xl mx-auto">
+                {/* Reasoning Effort */}
+                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 mb-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-2xl">🧠</span>
+                    <div>
+                      <h3 className="text-lg font-semibold">How Much Thinking?</h3>
+                      <p className="text-sm text-gray-600">Choose how deeply the AI should think about your request</p>
                     </div>
                   </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold mb-3">Verbosity</h3>
-                    <div className="space-y-3">
-                      {(['low', 'medium', 'high'] as const).map((level) => (
-                        <label key={level} className="flex items-center space-x-3 cursor-pointer">
-                          <input
-                            type="radio"
-                            name="verbosity"
-                            value={level}
-                            checked={verbosity === level}
-                            onChange={(e) => setVerbosity(e.target.value as any)}
-                            className="w-4 h-4 text-blue-600"
-                          />
-                          <div>
-                            <div className="font-medium capitalize">{level}</div>
-                            <div className="text-sm text-gray-600">
-                              {level === 'low' && 'Concise, efficient responses'}
-                              {level === 'medium' && 'Balanced detail level'}
-                              {level === 'high' && 'Comprehensive, detailed responses'}
-                            </div>
-                          </div>
-                        </label>
-                      ))}
-                    </div>
+                  
+                  <div className="grid grid-cols-3 gap-3">
+                    {[
+                      { value: 'minimal', label: 'Quick', desc: 'Fast answers', color: 'green' },
+                      { value: 'medium', label: 'Balanced', desc: 'Best for most tasks', color: 'blue' },
+                      { value: 'high', label: 'Deep', desc: 'Complex problems', color: 'purple' }
+                    ].map((option) => (
+                      <label key={option.value} className="cursor-pointer">
+                        <input
+                          type="radio"
+                          name="reasoning_effort"
+                          value={option.value}
+                          checked={reasoning_effort === option.value}
+                          onChange={(e) => setReasoningEffort(e.target.value as any)}
+                          className="sr-only"
+                        />
+                        <div className={`p-4 rounded-lg border-2 text-center transition-all ${
+                          reasoning_effort === option.value
+                            ? `border-${option.color}-500 bg-${option.color}-50 ring-2 ring-${option.color}-200`
+                            : 'border-gray-200 hover:border-gray-300'
+                        }`}>
+                          <div className="font-semibold">{option.label}</div>
+                          <div className="text-sm text-gray-600">{option.desc}</div>
+                        </div>
+                      </label>
+                    ))}
                   </div>
                 </div>
 
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold mb-3">💡 Tips</h3>
-                  <div className="space-y-4 text-sm text-gray-600">
+                {/* Verbosity */}
+                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 mb-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-2xl">📝</span>
                     <div>
-                      <strong>Reasoning Effort:</strong> Use "high" for complex coding, analysis, or multi-step problems. Use "minimal" for speed-critical applications or simple queries.
+                      <h3 className="text-lg font-semibold">How Much Detail?</h3>
+                      <p className="text-sm text-gray-600">Control how detailed the AI responses should be</p>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-3 gap-3">
+                    {[
+                      { value: 'low', label: 'Brief', desc: 'Short & focused', color: 'green' },
+                      { value: 'medium', label: 'Standard', desc: 'Good balance', color: 'blue' },
+                      { value: 'high', label: 'Detailed', desc: 'Comprehensive', color: 'purple' }
+                    ].map((option) => (
+                      <label key={option.value} className="cursor-pointer">
+                        <input
+                          type="radio"
+                          name="verbosity"
+                          value={option.value}
+                          checked={verbosity === option.value}
+                          onChange={(e) => setVerbosity(e.target.value as any)}
+                          className="sr-only"
+                        />
+                        <div className={`p-4 rounded-lg border-2 text-center transition-all ${
+                          verbosity === option.value
+                            ? `border-${option.color}-500 bg-${option.color}-50 ring-2 ring-${option.color}-200`
+                            : 'border-gray-200 hover:border-gray-300'
+                        }`}>
+                          <div className="font-semibold">{option.label}</div>
+                          <div className="text-sm text-gray-600">{option.desc}</div>
+                        </div>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Simple Tips */}
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl">💡</span>
+                    <div>
+                      <h3 className="font-semibold text-blue-900 mb-3">Quick Tips</h3>
+                      <div className="space-y-2 text-sm text-blue-800">
+                        <div className="flex gap-2">
+                          <span className="font-medium">🏃 Quick & Brief:</span>
+                          <span>Perfect for simple questions and fast responses</span>
+                        </div>
+                        <div className="flex gap-2">
+                          <span className="font-medium">⚖️ Balanced & Standard:</span>
+                          <span>Great for most tasks - recommended for beginners</span>
+                        </div>
+                        <div className="flex gap-2">
+                          <span className="font-medium">🧠 Deep & Detailed:</span>
+                          <span>Best for complex coding, analysis, or research tasks</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
                     </div>
                     <div>
                       <strong>Verbosity:</strong> Can be overridden in prompts with natural language. Example: "Use high verbosity for code explanations but low verbosity for status updates."
