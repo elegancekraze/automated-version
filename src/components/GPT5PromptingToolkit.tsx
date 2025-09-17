@@ -499,16 +499,6 @@ ${prompt}`;
                   </div>
                 </div>
               )}
-                      className="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors"
-                    >
-                      Copy
-                    </button>
-                  </div>
-                  <pre className="bg-gray-50 p-4 rounded-lg border text-sm overflow-x-auto whitespace-pre-wrap">
-                    {finalPrompt}
-                  </pre>
-                </div>
-              )}
             </div>
           )}
 
@@ -634,9 +624,9 @@ ${prompt}`;
                   
                   <div className="grid grid-cols-3 gap-3">
                     {[
-                      { value: 'minimal', label: 'Quick', desc: 'Fast answers', color: 'green' },
-                      { value: 'medium', label: 'Balanced', desc: 'Best for most tasks', color: 'blue' },
-                      { value: 'high', label: 'Deep', desc: 'Complex problems', color: 'purple' }
+                      { value: 'minimal', label: 'Quick', desc: 'Fast answers' },
+                      { value: 'medium', label: 'Balanced', desc: 'Best for most tasks' },
+                      { value: 'high', label: 'Deep', desc: 'Complex problems' }
                     ].map((option) => (
                       <label key={option.value} className="cursor-pointer">
                         <input
@@ -649,7 +639,9 @@ ${prompt}`;
                         />
                         <div className={`p-4 rounded-lg border-2 text-center transition-all ${
                           reasoning_effort === option.value
-                            ? `border-${option.color}-500 bg-${option.color}-50 ring-2 ring-${option.color}-200`
+                            ? option.value === 'minimal' ? 'border-green-500 bg-green-50 ring-2 ring-green-200' :
+                              option.value === 'medium' ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-200' :
+                              'border-purple-500 bg-purple-50 ring-2 ring-purple-200'
                             : 'border-gray-200 hover:border-gray-300'
                         }`}>
                           <div className="font-semibold">{option.label}</div>
@@ -672,9 +664,9 @@ ${prompt}`;
                   
                   <div className="grid grid-cols-3 gap-3">
                     {[
-                      { value: 'low', label: 'Brief', desc: 'Short & focused', color: 'green' },
-                      { value: 'medium', label: 'Standard', desc: 'Good balance', color: 'blue' },
-                      { value: 'high', label: 'Detailed', desc: 'Comprehensive', color: 'purple' }
+                      { value: 'low', label: 'Brief', desc: 'Short & focused' },
+                      { value: 'medium', label: 'Standard', desc: 'Good balance' },
+                      { value: 'high', label: 'Detailed', desc: 'Comprehensive' }
                     ].map((option) => (
                       <label key={option.value} className="cursor-pointer">
                         <input
@@ -687,7 +679,9 @@ ${prompt}`;
                         />
                         <div className={`p-4 rounded-lg border-2 text-center transition-all ${
                           verbosity === option.value
-                            ? `border-${option.color}-500 bg-${option.color}-50 ring-2 ring-${option.color}-200`
+                            ? option.value === 'low' ? 'border-green-500 bg-green-50 ring-2 ring-green-200' :
+                              option.value === 'medium' ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-200' :
+                              'border-purple-500 bg-purple-50 ring-2 ring-purple-200'
                             : 'border-gray-200 hover:border-gray-300'
                         }`}>
                           <div className="font-semibold">{option.label}</div>
@@ -721,30 +715,6 @@ ${prompt}`;
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          )}
-                    </div>
-                    <div>
-                      <strong>Verbosity:</strong> Can be overridden in prompts with natural language. Example: "Use high verbosity for code explanations but low verbosity for status updates."
-                    </div>
-                    <div>
-                      <strong>Performance:</strong> Higher reasoning effort improves accuracy but increases response time. Find the right balance for your use case.
-                    </div>
-                    <div>
-                      <strong>Agentic Tasks:</strong> For agents that use tools, consider medium-to-high reasoning effort for better decision making.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
-                <h4 className="font-semibold text-blue-900 mb-2">🚀 Pro Tip: Responses API</h4>
-                <p className="text-blue-800 text-sm">
-                  For best results with GPT-5 agentic workflows, use the Responses API with <code>previous_response_id</code> 
-                  to maintain reasoning context between tool calls. This improves performance and reduces costs by 
-                  reusing reasoning traces.
-                </p>
               </div>
             </div>
           )}
