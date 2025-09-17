@@ -1,5 +1,300 @@
 [
   {
+    "id": "a8cf548c-4143-4adb-a29c-88d57cb52a24",
+    "title": "🏷️ SEO Keywords & Topics",
+    "description": "chatgpt-prompts awesome-prompts seo-prompts ai-prompt-library prompt-engineering daily-prompts business-prompts writing-prompts coding-prompts ---",
+    "category": "Programming",
+    "tags": [],
+    "source": "github:sankyn1/awesome-chatgpt-prompts",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:40.383Z",
+    "priority": "high"
+  },
+  {
+    "id": "e7d3f007-f48f-4dce-a744-8633b34575f3",
+    "title": "Documentation",
+    "description": "[Click here to navigate to the Official Pezzo Documentation](https://docs.pezzo.ai/) In the documentation, you can find information on how to use Pezzo, its architecture, including tutorials and recipes for varius use cases and LLM providers.",
+    "category": "Software Architecture",
+    "tags": [],
+    "source": "github:pezzolabs/pezzo",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:42.903Z",
+    "priority": "high"
+  },
+  {
+    "id": "d8703744-946f-4d01-b8a0-f6526c28d2f7",
+    "title": "Supported Clients",
+    "description": "<table> <thead> <tr> <th>Feature</th> <th> <a href=\"https://www.npmjs.com/package/@pezzo/client\">Node.js</a> • <a href=\"https://docs.pezzo.ai/client/pezzo-client-node\">Docs</a> </th> <th> <a href=\"https://pypi.org/\">Python</a> • <a href=\"https://docs.pezzo.ai/client/pezzo-client-python\">Docs</a> </th> <th> <a href=\"https://github.com/pezzolabs/pezzo/issues/180\">LangChain</a> </th> </tr> </thead> <tbody> <tr> <td>Prompt Management</td> <td align=\"center\">✅</td> <td align=\"center\">✅</td> <td align=\"center\">✅</td> </tr> <tr> <td>Observability</td> <td align=\"center\">✅</td> <td align=\"center\">✅</td> <td align=\"center\">✅</td> </tr> <tr> <td>Caching</td> <td align=\"center\">✅</td> <td align=\"center\">✅</td> <td align=\"center\">✅</td> </tr> </tbody> </table> Looking for a client that's not listed here? [Open an issue](https://github.com/pezzolabs/pezzo/issues/new/choose) and let us know!",
+    "category": "Programming",
+    "tags": [
+      "python",
+      "node"
+    ],
+    "source": "github:pezzolabs/pezzo",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:42.903Z",
+    "priority": "high"
+  },
+  {
+    "id": "71581861-00cb-458b-9f4c-e9b77b314f56",
+    "title": "Getting Started - Docker Compose",
+    "description": "If you simply want to run the full Pezzo stack locally, check out [Running With Docker Compose](http://docs.pezzo.ai/introduction/docker-compose) in the documentation. If you want to run Pezzo in development mode, continue reading.",
+    "category": "Programming",
+    "tags": [],
+    "source": "github:pezzolabs/pezzo",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:42.903Z",
+    "priority": "high"
+  },
+  {
+    "id": "264c6f65-d6ee-495e-8c73-490d0219c467",
+    "title": "Start Pezzo",
+    "description": "Deploy Prisma migrations: npx dotenv-cli -e apps/server/.env -- npx prisma migrate deploy --schema apps/server/prisma/schema.prisma Run the server: npx nx serve server The server is now running. You can verify that by navigating to http://localhost:3000/api/healthz. In development mode, you want to run codegen in watch mode, so whenever you make changes to the schema, types are generated automatically. After running the server, run the following in a _separate terminal Window_: npm run graphql:codegen:watch This will connect [codegen](https://the-guild.dev/graphql/codegen/docs/getting-started) directly to the server and keep your GraphQL schema up-to-date as you make changes. Finally, you are ready to run the Pezzo Console: npx nx serve console That's it! The Pezzo Console is now accessible at http://localhost:4200 🚀",
+    "category": "API Development",
+    "tags": [
+      "api"
+    ],
+    "source": "github:pezzolabs/pezzo",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:42.904Z",
+    "priority": "high"
+  },
+  {
+    "id": "e25a8ab7-abd0-4502-adb1-02397232d0ca",
+    "title": "License",
+    "description": "This repository's source code is available under the [Apache 2.0 License](LICENSE).",
+    "category": "Programming",
+    "tags": [],
+    "source": "github:pezzolabs/pezzo",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:42.904Z",
+    "priority": "high"
+  },
+  {
+    "id": "a7b98abb-da06-4643-b8c6-f8e42d5d00bf",
+    "title": "Prompty",
+    "description": "Prompty is an asset class and format for LLM prompts designed to enhance observability, understandability, and portability for developers. The primary goal is to accelerate the developer inner loop. This repo contains the following:",
+    "category": "Software Architecture",
+    "tags": [],
+    "source": "github:microsoft/prompty",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:44.347Z",
+    "priority": "high"
+  },
+  {
+    "id": "314fd5b0-bdf0-43b5-84e9-3546cd4ad526",
+    "title": "(More on the way)",
+    "description": "This Visual Studio Code extension offers an intuitive prompt playground within VS Code to streamline the prompt engineering process. You can find the Prompty extension in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.prompty).",
+    "category": "Programming",
+    "tags": [],
+    "source": "github:microsoft/prompty",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "priority": "high"
+  },
+  {
+    "id": "796fcf6e-85dd-4021-b757-1a8f5a8cd4a1",
+    "title": "Specification",
+    "description": "Prompty standardizes prompts and their execution into a single asset. ![Language Spec](img/vscode/readme_lang_spec.png)",
+    "category": "Programming",
+    "tags": [],
+    "source": "github:microsoft/prompty",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "priority": "high"
+  },
+  {
+    "id": "199d2d99-c104-4f0b-9e4e-ba7a7fe95614",
+    "title": "Quickly Create",
+    "description": "Quickly create a basic prompty by right-clicking in the VS Code explorer and selecting \"New Prompty.\" ![Quick Create](img/vscode/image-2.png)",
+    "category": "Programming",
+    "tags": [],
+    "source": "github:microsoft/prompty",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "priority": "high"
+  },
+  {
+    "id": "9c232d64-845e-4031-b9f1-737e5ca040a4",
+    "title": "Preview",
+    "description": "Preview prompty similar to markdown with dynamic template rendering while typing, allowing you to see the prompt that will be sent to the model. ![Preview](img/vscode/readme_preview.png)",
+    "category": "Code Review",
+    "tags": [
+      "review"
+    ],
+    "source": "github:microsoft/prompty",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "priority": "high"
+  },
+  {
+    "id": "f16bb754-0e01-4158-86bc-3c9d1a3a007d",
+    "title": "Quickly switch between different model configurations.",
+    "description": "![Define Configuration](img/vscode/image-5.png) ![Switch Model Configuration](img/vscode/switchModelConfiguration.png)",
+    "category": "Programming",
+    "tags": [],
+    "source": "github:microsoft/prompty",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "priority": "high"
+  },
+  {
+    "id": "b27a1ddc-e618-4d09-a7bb-f1f12cecfda4",
+    "title": "Workspace level to share with team members via Git.",
+    "description": "![ModelConfigurationSettings](img/vscode/modelConfigurationSettings.png)",
+    "category": "Programming",
+    "tags": [],
+    "source": "github:microsoft/prompty",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "priority": "high"
+  },
+  {
+    "id": "29b35a7d-011a-4ff7-be62-f4b1ee039b00",
+    "title": "Prompty Output shows a concise view.",
+    "description": "![Prompty Output](img/vscode/image-3.png)",
+    "category": "Programming",
+    "tags": [],
+    "source": "github:microsoft/prompty",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "priority": "high"
+  },
+  {
+    "id": "fcebda5d-0bc9-45e8-8b7e-98834d97e1b1",
+    "title": "Prompty Output (Verbose) shows detailed requests sent and received.",
+    "description": "![Prompty Output (Verbose)](img/vscode/image-8.png)",
+    "category": "Programming",
+    "tags": [],
+    "source": "github:microsoft/prompty",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "priority": "high"
+  },
+  {
+    "id": "6b0b7ce6-b813-4bb0-9438-8146b2669b61",
+    "title": "Orchestrator Integration",
+    "description": "Prompty is supported by popular orchestration frameworks:",
+    "category": "Programming",
+    "tags": [],
+    "source": "github:microsoft/prompty",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "priority": "high"
+  },
+  {
+    "id": "f4bb50c4-8215-4bbc-912d-7b87fa1e8211",
+    "title": "CtCI_Book_Club",
+    "description": "Javascript prompts and solutions as well as testing for every question in Cracking The Coding Interview Make sure to read the chapter before you start answering the questions! There's also a hints file for each question, I'd recommend reading all of the hints after you find your own solution, they provide some good insights as to other solutions to the problems, and potentially more efficient ways of solving them To read the prompts and chapters yourself, check out the [book](<http://englishonlineclub.com/pdf/Cracking%20the%20Coding%20Interview%20-%20189%20Programming%20Questions%20and%20Solutions%20(6th%20Edition)%20[EnglishOnlineClub.com].pdf>), it is a great resource and is worth the purchase!",
+    "category": "Coding Interview",
+    "tags": [
+      "javascript",
+      "java",
+      "testing",
+      "interview"
+    ],
+    "source": "github:tarrinneal/CtCI_Book_Club",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:46.377Z",
+    "priority": "high"
+  },
+  {
+    "id": "3aa36e06-ea0d-4e0e-9826-c36f2cf1de98",
+    "title": "NOTICE",
+    "description": "This repository contains the public FTC SDK for the SKYSTONE (2019-2020) competition season. Formerly this software project was hosted [here](https://github.com/ftctechnh/ftc_app). Teams who are competing in the SKYSTONE Challenge should use this [new SKYSTONE repository](https://github.com/FIRST-Tech-Challenge/SKYSTONE) instead of the older (and no longer updated) ftc_app repository.",
+    "category": "Coding Interview",
+    "tags": [],
+    "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:49.999Z",
+    "priority": "high"
+  },
+  {
+    "id": "c7cd21c0-1929-48ca-852f-41b2d2ef57c0",
+    "title": "Welcome!",
+    "description": "This GitHub repository contains the source code that is used to build an Android app to control a FIRST Tech Challenge competition robot. To use this SDK, download/clone the entire project to your local computer.",
+    "category": "Coding Interview",
+    "tags": [],
+    "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:49.999Z",
+    "priority": "high"
+  },
+  {
+    "id": "d1a431b6-2758-4d5e-90fd-666a26a972be",
+    "title": "Getting Started",
+    "description": "If you are new to robotics or new to the FIRST Tech Challenge, then you should consider reviewing the [FTC Blocks Tutorial](https://github.com/FIRST-Tech-Challenge/SKYSTONE/wiki/Blocks-Tutorial) to get familiar with how to use the control system: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[FTC Blocks Online Tutorial](https://github.com/FIRST-Tech-Challenge/SKYSTONE/wiki/Blocks-Tutorial) Even if you are an advanced Java programmer, it is helpful to start with the [FTC Blocks tutorial](https://github.com/FIRST-Tech-Challenge/SKYSTONE/wiki/Blocks-Tutorial), and then migrate to the [OnBot Java Tool](https://github.com/FIRST-Tech-Challenge/SKYSTONE/wiki/OnBot-Java-Tutorial) or to [Android Studio](https://github.com/FIRST-Tech-Challenge/SKYSTONE/wiki/Android-Studio-Tutorial) afterwards.",
+    "category": "Coding Interview",
+    "tags": [
+      "java",
+      "review"
+    ],
+    "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:49.999Z",
+    "priority": "high"
+  },
+  {
+    "id": "e70485c5-f277-4820-abe2-5b6c307b8617",
+    "title": "Downloading the Project",
+    "description": "If you are an Android Studio programmer, there are several ways to download this repo. Note that if you use the Blocks or OnBot Java Tool to program your robot, then you do not need to download this repository.",
+    "category": "Programming",
+    "tags": [
+      "java"
+    ],
+    "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:49.999Z",
+    "priority": "high"
+  },
+  {
+    "id": "1609f879-10b8-4fca-a381-458d10745828",
+    "title": "User Documentation and Tutorials",
+    "description": "FIRST maintains online documentation with information and tutorials on how to use the FIRST Tech Challenge software and robot control system. You can access this documentation using the following link: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SKYSTONE Online Documentation](https://github.com/FIRST-Tech-Challenge/SKYSTONE/wiki) Note that the online documentation is an \"evergreen\" document that is constantly being updated and edited. It contains the most current information about the FIRST Tech Challenge software and control system.",
+    "category": "Coding Interview",
+    "tags": [],
+    "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:49.999Z",
+    "priority": "high"
+  },
+  {
+    "id": "d1708077-7b6a-4609-9d71-affbb27158df",
+    "title": "Javadoc Reference Material",
+    "description": "The Javadoc reference documentation for the FTC SDK is now available online. Click on the following link to view the FTC SDK Javadoc documentation as a live website: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[FTC Javadoc Documentation](https://first-tech-challenge.github.io/SkyStone/doc/javadoc/index.html) Documentation for the FTC SDK is also included with this repository. There is a subfolder called \"doc\" which contains several subfolders:",
+    "category": "Coding Interview",
+    "tags": [
+      "java",
+      "html"
+    ],
+    "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:50.000Z",
+    "priority": "high"
+  },
+  {
+    "id": "d64e9a83-fba9-4fd3-af07-1938a22a4477",
+    "title": "FTC software can detect and enable an FTDI reset feature that is available with REV Robotics v1.8 Expansion Hub firmware and greater.",
+    "description": "+ When enabled, the Expansion Hub can detect if it hasn't communicated with the Robot Controller over the FTDI (USB) connection. + If the Hub hasn't heard from the Robot Controller in a while, it will reset the FTDI connection. + This action helps system recover from some ESD-induced disruptions.",
+    "category": "Programming",
+    "tags": [],
+    "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:50.001Z",
+    "priority": "high"
+  },
+  {
+    "id": "356f67d9-c670-4dce-9010-48986bfe28dd",
+    "title": "Added blocks for DcMotorEx methods.",
+    "description": "+ These are enhanced methods that you can use when supported by the motor controller hardware. + The REV Robotics Expansion Hub supports these enhanced methods. + Enhanced methods include methods to get/set motor velocity (in encoder pulses per second), get/set PIDF coefficients, etc..",
+    "category": "Programming",
+    "tags": [],
+    "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
+    "featured": true,
+    "created_at": "2025-09-17T11:46:50.001Z",
+    "priority": "high"
+  },
+  {
     "id": "489b5953-db3d-492b-a445-5f1a31c2b5be",
     "title": "Develop a comprehensive business strategy for {industry}",
     "description": "High-quality prompt for business & productivity",
@@ -2377,2406 +2672,6 @@
     "created_date": "2025-09-13",
     "use_cases": [
       "Business & Productivity"
-    ]
-  },
-  {
-    "id": "0744d192-52d0-414b-aa45-84912d5fba46",
-    "title": "Architect a scalable microservices system",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "microservices",
-      "architecture",
-      "scalability"
-    ],
-    "prompt_text": "Design a comprehensive microservices architecture for {application_type}. Include service decomposition strategy, API design patterns, data management approaches, inter-service communication protocols, security considerations, monitoring and logging, deployment strategies, and scalability patterns with diagrams.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.8,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "08162d34-a240-4578-a287-e470733528a4",
-    "title": "Design a robust API architecture",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "api",
-      "architecture",
-      "rest"
-    ],
-    "prompt_text": "Create a RESTful API architecture for {application_domain}. Include endpoint design, authentication/authorization, rate limiting, versioning strategy, error handling, documentation, testing approaches, and monitoring. Provide OpenAPI specifications and security best practices.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "a2a00daa-f3a0-44a9-ae9c-1674e782b8f1",
-    "title": "Build a scalable database architecture",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "database",
-      "architecture",
-      "scalability"
-    ],
-    "prompt_text": "Design a database architecture for {application_type} handling {data_volume}. Include schema design, indexing strategy, partitioning, replication, backup/recovery, performance optimization, security measures, and scaling strategies. Consider both SQL and NoSQL options.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "a04c395b-c63a-4cb6-a5e6-d6f77f5a5c45",
-    "title": "Create a comprehensive testing strategy",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "testing",
-      "qa",
-      "automation"
-    ],
-    "prompt_text": "Develop a complete testing strategy for {project_type}. Include unit testing, integration testing, end-to-end testing, performance testing, security testing approaches. Provide test automation frameworks, CI/CD integration, test data management, coverage metrics, and best practices with code examples.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.6,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "b669c80b-a0d2-46fb-a9f3-fef9c582b0f7",
-    "title": "Design a CI/CD pipeline architecture",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "cicd",
-      "devops",
-      "automation"
-    ],
-    "prompt_text": "Create a robust CI/CD pipeline for {technology_stack}. Include build automation, testing stages, deployment strategies, rollback mechanisms, monitoring, security scanning, and infrastructure as code. Provide configuration examples for popular tools.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.6,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "59ce0a3d-6fa3-4b16-a08d-294661edfaec",
-    "title": "Optimize application performance",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "performance",
-      "optimization",
-      "monitoring"
-    ],
-    "prompt_text": "Create a performance optimization plan for {application_type}. Include performance profiling, bottleneck identification, caching strategies, database optimization, code optimization techniques, monitoring setup, and benchmarking methods. Provide specific improvements and measurement metrics.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "e77ac861-e56a-4b07-9292-8cdd9a14aa2c",
-    "title": "Implement comprehensive security measures",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "security",
-      "authentication",
-      "encryption"
-    ],
-    "prompt_text": "Design a security implementation plan for {application_type}. Include authentication/authorization, input validation, encryption, secure coding practices, vulnerability assessment, penetration testing, security monitoring, and incident response procedures.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.8,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "5bfd71fa-7e3e-416f-9c34-e7ac9fd6262f",
-    "title": "Establish code quality standards",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "code-quality",
-      "standards",
-      "best-practices"
-    ],
-    "prompt_text": "Create comprehensive code quality standards for {programming_language} projects. Include coding conventions, documentation requirements, code review processes, static analysis tools, refactoring guidelines, and quality metrics. Provide linting configurations and examples.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "1d22abd2-3a78-453b-baba-0d8538617366",
-    "title": "Implement advanced monitoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "monitoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced monitoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "541037fd-6ad8-49ce-99b0-9eb55888bc53",
-    "title": "Implement advanced logging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "logging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced logging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.5,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "a62337a9-900b-4675-9897-eca30d685017",
-    "title": "Implement advanced algorithms for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "algorithms",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced algorithms implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "ae90bee0-fc13-460b-9bcf-26463af83cdb",
-    "title": "Implement advanced data structures for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "data-structures",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced data structures implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.8,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "bb181bc3-fccb-4953-a416-3ad77047cc13",
-    "title": "Implement advanced design patterns for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "design-patterns",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced design patterns implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "9c24cc69-d376-4461-a1b1-d42a3a358537",
-    "title": "Implement advanced debugging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "debugging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced debugging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.1,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "672a03f7-ded0-4b46-af46-bda5ff95ea2b",
-    "title": "Implement advanced refactoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "refactoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced refactoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "66e30fd7-7da7-4dd5-b813-e55c2f1c49f1",
-    "title": "Implement advanced documentation for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "documentation",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced documentation implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.1,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "fd3ec3fa-4162-49bf-905a-f8a4d1bfff68",
-    "title": "Implement advanced version control for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "version-control",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced version control implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.8,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "95825ff9-14c1-44c9-9bd4-29f620ee0d12",
-    "title": "Implement advanced deployment for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "deployment",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced deployment implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "e51f234a-ae72-47ea-a901-381e87f35979",
-    "title": "Implement advanced monitoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "monitoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced monitoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "43ea8863-1f39-476c-bf8a-5a894bd08c4b",
-    "title": "Implement advanced logging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "logging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced logging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "35a44f56-65a8-41fc-afe3-2e1a232ee0b0",
-    "title": "Implement advanced algorithms for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "algorithms",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced algorithms implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.6,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "f1651317-dfdf-47e5-8b5e-bc427c67ded3",
-    "title": "Implement advanced data structures for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "data-structures",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced data structures implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.6,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "06331e70-3379-4781-8117-5c0adc8f189f",
-    "title": "Implement advanced design patterns for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "design-patterns",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced design patterns implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "609e4ef4-1b4d-4659-8733-7939d80a0875",
-    "title": "Implement advanced debugging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "debugging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced debugging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "2c2ffd4d-352f-46d5-9a79-231b3a7d5e9c",
-    "title": "Implement advanced refactoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "refactoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced refactoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "01c170d5-730c-46d8-a13d-7a3737770959",
-    "title": "Implement advanced documentation for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "documentation",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced documentation implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "69ad297e-0565-4fbb-a30f-e873814e5ac3",
-    "title": "Implement advanced version control for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "version-control",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced version control implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "f5a72575-735f-45e9-8456-ea250ba6ad3a",
-    "title": "Implement advanced deployment for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "deployment",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced deployment implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "6ceb8596-1fc1-4a85-81d2-492c40728bfb",
-    "title": "Implement advanced monitoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "monitoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced monitoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "bf6deed0-3102-4975-ae7a-73246fc25170",
-    "title": "Implement advanced logging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "logging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced logging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.5,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "fed6824e-cc98-49cb-a433-81403303451f",
-    "title": "Implement advanced algorithms for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "algorithms",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced algorithms implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.6,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "ebc93953-70f3-4b41-9d57-ba9650bccef4",
-    "title": "Implement advanced data structures for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "data-structures",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced data structures implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.8,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "87adbad2-63d4-421d-9c4c-d8812fe4c8e8",
-    "title": "Implement advanced design patterns for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "design-patterns",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced design patterns implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "455850d7-91ed-4d7a-9645-47c9872c7617",
-    "title": "Implement advanced debugging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "debugging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced debugging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "a2a422fc-6ece-49c3-8afb-fd7b96dbd2fc",
-    "title": "Implement advanced refactoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "refactoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced refactoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.5,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "e1efc419-378d-459d-99e6-64d33ff31651",
-    "title": "Implement advanced documentation for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "documentation",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced documentation implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "27982cf8-5b67-4599-b666-85cd42ca2de1",
-    "title": "Implement advanced version control for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "version-control",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced version control implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "ac45097a-6710-428f-9556-c15a7b86f4e6",
-    "title": "Implement advanced deployment for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "deployment",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced deployment implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "25384d99-ce41-4f71-8d60-81b42a299027",
-    "title": "Implement advanced monitoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "monitoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced monitoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.5,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "0f671734-15c0-485f-aa69-e82b08c7b9d3",
-    "title": "Implement advanced logging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "logging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced logging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.5,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "354b09bb-b8cd-4380-abbb-1fefd470a398",
-    "title": "Implement advanced algorithms for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "algorithms",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced algorithms implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.5,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "dd91154d-1b7f-441b-8e4e-43dfb230bf6b",
-    "title": "Implement advanced data structures for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "data-structures",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced data structures implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "b79e12b3-19df-4039-bac0-05a55b706dc8",
-    "title": "Implement advanced design patterns for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "design-patterns",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced design patterns implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.8,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "f3e482c3-f70a-44ac-b930-5412ae0150cf",
-    "title": "Implement advanced debugging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "debugging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced debugging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.8,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "b5cf90d7-395e-43ed-aa60-a6e235efd916",
-    "title": "Implement advanced refactoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "refactoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced refactoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "5994e6f7-c1c8-47bc-a1a7-fd75ba3d6f48",
-    "title": "Implement advanced documentation for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "documentation",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced documentation implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.5,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "fce33a33-c3ff-4705-ad5a-03ce84708c6c",
-    "title": "Implement advanced version control for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "version-control",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced version control implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "f0cd1dab-4795-4197-bfd9-a811a157b537",
-    "title": "Implement advanced deployment for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "deployment",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced deployment implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "1f68aebf-fe35-4c53-a328-99df8b76fbaf",
-    "title": "Implement advanced monitoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "monitoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced monitoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "e3990d88-dad9-406b-8422-ec97f839efd0",
-    "title": "Implement advanced logging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "logging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced logging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "c802756f-c306-4193-8a26-f2666435d83c",
-    "title": "Implement advanced algorithms for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "algorithms",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced algorithms implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "66b4db60-3e28-4bda-8aab-d85deb73b475",
-    "title": "Implement advanced data structures for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "data-structures",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced data structures implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "6fddf3ed-5be2-4667-8fc1-eb22d120f637",
-    "title": "Implement advanced design patterns for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "design-patterns",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced design patterns implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "8af5112f-3883-4fea-bc20-f678d5d2679a",
-    "title": "Implement advanced debugging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "debugging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced debugging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "5b4c0684-17b0-422c-940c-c5faf98e285d",
-    "title": "Implement advanced refactoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "refactoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced refactoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.1,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "1f5b6261-3820-4dd6-95fd-ef9810a11b9f",
-    "title": "Implement advanced documentation for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "documentation",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced documentation implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.5,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "a570fa23-f158-48b5-b875-a72d3c0313da",
-    "title": "Implement advanced version control for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "version-control",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced version control implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.1,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "96eaa1c4-a61c-422a-a46f-72e068c01833",
-    "title": "Implement advanced deployment for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "deployment",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced deployment implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.5,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "a8d4cbed-77e3-4213-a5f8-db19d5fccdaa",
-    "title": "Implement advanced monitoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "monitoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced monitoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.6,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "17781bd0-250b-4476-b8a6-fc1f7b7b2618",
-    "title": "Implement advanced logging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "logging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced logging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.6,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "e9947fac-04ef-4152-8089-d1998fb05ed5",
-    "title": "Implement advanced algorithms for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "algorithms",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced algorithms implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "87b40c83-270f-4578-a761-adbd8c4c3bc2",
-    "title": "Implement advanced data structures for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "data-structures",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced data structures implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "c68a4e07-95c3-43c8-bef0-e0caf2b864ed",
-    "title": "Implement advanced design patterns for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "design-patterns",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced design patterns implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "b1782817-b763-440d-aa6b-89d6895dccf6",
-    "title": "Implement advanced debugging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "debugging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced debugging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "47ec3616-7326-485e-a79b-c1e96c131489",
-    "title": "Implement advanced refactoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "refactoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced refactoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.8,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "c8ad40db-01c9-4a1b-82d3-34b6d1be36eb",
-    "title": "Implement advanced documentation for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "documentation",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced documentation implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "49a6b15b-b117-4fa5-9254-43bc56fbbfcc",
-    "title": "Implement advanced version control for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "version-control",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced version control implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.1,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "bd3e2dfc-5f9c-4845-bbb7-3bb4d3952611",
-    "title": "Implement advanced deployment for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "deployment",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced deployment implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "1d218f16-2109-4fa7-a9c3-a713ba027910",
-    "title": "Implement advanced monitoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "monitoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced monitoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.1,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "4655b6b7-2b58-4c15-98f5-929ba6e2bb5a",
-    "title": "Implement advanced logging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "logging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced logging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "38b224c5-f885-4f1e-a3d9-0965dc5231ef",
-    "title": "Implement advanced algorithms for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "algorithms",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced algorithms implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "5653a09f-63c0-4236-9b63-80f573ccf189",
-    "title": "Implement advanced data structures for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "data-structures",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced data structures implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.5,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "c6e30eca-9e62-49c4-8560-3d6e01fd3c6b",
-    "title": "Implement advanced design patterns for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "design-patterns",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced design patterns implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.8,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "d1a27cb3-40e4-4423-b8ce-e9743230cb0f",
-    "title": "Implement advanced debugging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "debugging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced debugging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "18d9ddc3-0c43-4141-a908-a85a4ea11ed8",
-    "title": "Implement advanced refactoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "refactoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced refactoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "01ddc94f-8c28-459c-bac0-cdc5f5a1bd58",
-    "title": "Implement advanced documentation for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "documentation",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced documentation implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "cea36f44-ab82-480e-992b-499ee80f4cd2",
-    "title": "Implement advanced version control for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "version-control",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced version control implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.1,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "0c543129-2bba-415b-8c23-15021bf915ba",
-    "title": "Implement advanced deployment for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "deployment",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced deployment implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "708cd889-8c65-47ec-8e1b-51bab9d5f216",
-    "title": "Implement advanced monitoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "monitoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced monitoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.1,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "6076a5da-f4ae-4a35-88e8-6ba6297f8a82",
-    "title": "Implement advanced logging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "logging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced logging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.8,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "004b4fde-4527-4942-a884-c9233bdf38eb",
-    "title": "Implement advanced algorithms for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "algorithms",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced algorithms implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "015d40da-0c94-4576-9905-8db308bfb6fb",
-    "title": "Implement advanced data structures for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "data-structures",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced data structures implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.5,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "93172148-cf2f-4fbb-9fbe-3445811bf119",
-    "title": "Implement advanced design patterns for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "design-patterns",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced design patterns implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "e4031623-b8dc-4a89-80f4-e2d910e58f3e",
-    "title": "Implement advanced debugging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "debugging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced debugging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "9a56cfc0-f47a-4f41-b0a0-7cf5e74c43ac",
-    "title": "Implement advanced refactoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "refactoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced refactoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.1,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "c5c2d817-76db-4ddf-8ca7-b438bbc87591",
-    "title": "Implement advanced documentation for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "documentation",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced documentation implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "cc90a9f6-9ff6-4e93-8e23-753ed97ae256",
-    "title": "Implement advanced version control for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "version-control",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced version control implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.6,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "29e79ece-b3cb-4890-a039-3e5fec3aeaf8",
-    "title": "Implement advanced deployment for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "deployment",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced deployment implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "23e414bf-a35b-4f98-8140-4642a95728a4",
-    "title": "Implement advanced monitoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "monitoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced monitoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.1,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "9634cdb0-d857-44a9-9c2a-bfaf13d5472a",
-    "title": "Implement advanced logging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "logging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced logging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "4e2deb96-ad0e-46ad-9bcc-efbfe24e7a6e",
-    "title": "Implement advanced algorithms for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "algorithms",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced algorithms implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.5,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "8a2b3647-9e2f-4670-8fc9-f2a393e503c6",
-    "title": "Implement advanced data structures for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "data-structures",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced data structures implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.6,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "19fb39ff-67d7-4088-be9a-a8df10e4b23e",
-    "title": "Implement advanced design patterns for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "design-patterns",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced design patterns implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "43cde489-6664-4c57-92e8-9c87863a1049",
-    "title": "Implement advanced debugging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "debugging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced debugging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "4486064b-76f1-4c6a-8b9d-99c1294212b0",
-    "title": "Implement advanced refactoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "refactoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced refactoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "d9f308a7-d80c-4d27-8453-f7e653db744b",
-    "title": "Implement advanced documentation for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "documentation",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced documentation implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "aceffc35-8e94-42ad-a138-b99a6eaf279f",
-    "title": "Implement advanced version control for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "version-control",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced version control implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "08ce19be-3e11-4189-9f44-704b25dfb787",
-    "title": "Implement advanced deployment for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "deployment",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced deployment implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "07794c07-a399-4076-9365-436baf92ab03",
-    "title": "Implement advanced monitoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "monitoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced monitoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "a846dc48-6433-4b3f-9cb8-7168d4574bd7",
-    "title": "Implement advanced logging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "logging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced logging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "e1e26073-cd70-4756-99be-94e20961bc46",
-    "title": "Implement advanced algorithms for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "algorithms",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced algorithms implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "c7a11758-a224-447a-a716-5ef932d6a03e",
-    "title": "Implement advanced data structures for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "data-structures",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced data structures implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "7a4336e7-0106-4829-b531-36129793cf97",
-    "title": "Implement advanced design patterns for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "design-patterns",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced design patterns implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "16ef4fd7-79c1-44eb-83c8-4a21b954235e",
-    "title": "Implement advanced debugging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "debugging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced debugging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "e9de5df1-962d-4a42-8550-3a2c8fe410b9",
-    "title": "Implement advanced refactoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "refactoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced refactoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.6,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "de00552d-97b7-412d-bc9b-92fe00d6a969",
-    "title": "Implement advanced documentation for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "documentation",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced documentation implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "f64dba40-b1be-453f-be80-486439dfc608",
-    "title": "Implement advanced version control for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "version-control",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced version control implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "ca56c7ef-6b88-4a37-9f78-66b01de9c92c",
-    "title": "Implement advanced deployment for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "deployment",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced deployment implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "83f2c12b-1b68-43c3-9402-16bb7bacb254",
-    "title": "Implement advanced monitoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "monitoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced monitoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "af75b247-7244-4b50-9532-ebe274f00b96",
-    "title": "Implement advanced logging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "logging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced logging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.2,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "07bf69a0-4d2e-4f98-86e8-fcfb83f9aeba",
-    "title": "Implement advanced algorithms for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "algorithms",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced algorithms implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "7bd89506-c93f-47cc-976f-6093ba2275c2",
-    "title": "Implement advanced data structures for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "data-structures",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced data structures implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.5,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "81def1b3-2cd2-4e3f-886f-ba7c4703c5ea",
-    "title": "Implement advanced design patterns for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "design-patterns",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced design patterns implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.6,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "41d3baf5-5440-4e39-9631-782c4c10129b",
-    "title": "Implement advanced debugging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "debugging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced debugging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "b6616b3d-4ef6-43ac-bcf2-ad160af34fc2",
-    "title": "Implement advanced refactoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "refactoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced refactoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "63f64365-270a-499f-ac1b-69978a0ce94f",
-    "title": "Implement advanced documentation for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "documentation",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced documentation implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.1,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "55f8a1d2-6388-4211-a167-03954081073d",
-    "title": "Implement advanced version control for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "version-control",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced version control implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.8,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "8abc9229-a66c-4d17-9096-72925714b6be",
-    "title": "Implement advanced deployment for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "deployment",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced deployment implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Advanced",
-    "rating": 4.3,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "26192f3b-4abf-4578-b41e-cea1368e0b57",
-    "title": "Implement advanced monitoring for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "monitoring",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced monitoring implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4.7,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
-    ]
-  },
-  {
-    "id": "2991e827-5bb6-432d-9df5-f9423dba2d15",
-    "title": "Implement advanced logging for {language}",
-    "description": "High-quality prompt for programming & development",
-    "category": "Programming & Development",
-    "tags": [
-      "logging",
-      "implementation",
-      "best-practices"
-    ],
-    "prompt_text": "Create an advanced logging implementation for {language}. Include best practices, optimization techniques, error handling, testing strategies, and documentation. Provide code examples and performance considerations.",
-    "source": "Community Curated",
-    "source_url": "",
-    "difficulty": "Intermediate",
-    "rating": 4,
-    "created_date": "2025-09-13",
-    "use_cases": [
-      "Programming & Development"
     ]
   },
   {
