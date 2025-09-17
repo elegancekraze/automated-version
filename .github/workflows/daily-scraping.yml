@@ -16,6 +16,7 @@ on:
         options:
           - all
           - reddit
+          - github
           - twitter
 
 env:
@@ -48,6 +49,13 @@ jobs:
           REDDIT_CLIENT_ID=${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET=${{ secrets.REDDIT_CLIENT_SECRET }}
           REDDIT_USER_AGENT=GPT5PromptScraper/1.0.0
+          
+          # GitHub API Configuration  
+          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          
+          # Scraping Configuration
+          SCRAPE_REDDIT=true
+          SCRAPE_GITHUB=true
           
           # Firecrawl API Configuration  
           FIRECRAWL_API_KEY=${{ secrets.FIRECRAWL_API_KEY }}

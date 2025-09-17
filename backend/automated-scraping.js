@@ -28,6 +28,7 @@ const CONFIG = {
   maxPrompts: 5000,
   sources: {
     reddit: process.env.SCRAPE_REDDIT !== 'false',
+    github: process.env.SCRAPE_GITHUB !== 'false', // New GitHub scraper
     twitter: false // Disabled - Twitter prompts are low quality
   }
 };
@@ -128,6 +129,36 @@ async function scrapeReddit() {
   }
 }
 
+async function scrapeGitHub() {
+  console.log('🐙 Starting GitHub scraping (high-quality prompts)...');
+  try {
+    const { default: GitHubScraper } = await import('./src/scrapers/github-scraper.js');
+    const scraper = new GitHubScraper();
+    
+    // Scrape prompts from GitHub repositories and gists
+    const prompts = await scraper.scrapePrompts(200); // Limit to 200 to avoid overwhelming
+    
+    // Filter for quality (GitHub content is generally high quality already)
+    const qualityPrompts = prompts.filter(prompt => {
+      return prompt.prompt_text &&
+             prompt.title &&
+             prompt.prompt_text.length >= 50 &&
+             prompt.prompt_text.length <= 3000 &&
+             !prompt.prompt_text.toLowerCase().includes('lorem ipsum') &&
+             !prompt.prompt_text.toLowerCase().includes('placeholder') &&
+             !prompt.prompt_text.toLowerCase().includes('todo:') &&
+             !prompt.prompt_text.toLowerCase().includes('fixme:');
+    });
+    
+    console.log(`✅ GitHub: Found ${prompts.length} prompts, kept ${qualityPrompts.length} high-quality ones`);
+    return qualityPrompts;
+    
+  } catch (error) {
+    console.error('❌ GitHub scraping error:', error.message);
+    return [];
+  }
+}
+
 async function updateDataFile(newPrompts, existingPrompts) {
   console.log('💾 Updating data file...');
   
@@ -162,7 +193,7 @@ async function updateDataFile(newPrompts, existingPrompts) {
   const finalData = {
     generated_at: new Date().toISOString(),
     total_prompts: finalPrompts.length,
-    sources: ['reddit', 'twitter', 'manual'],
+    sources: ['reddit', 'github', 'twitter', 'manual'],
     last_update: new Date().toISOString().split('T')[0],
     prompts: finalPrompts
   };
@@ -213,12 +244,17 @@ async function main() {
     const beforeCount = existingPrompts.length;
     console.log(`📚 Loaded ${beforeCount} existing prompts`);
     
-    // Scrape from enabled sources (Reddit only - high quality)
+    // Scrape from enabled sources (Reddit + GitHub - high quality)
     const newPrompts = [];
     
     if (CONFIG.sources.reddit) {
       const redditPrompts = await scrapeReddit();
       newPrompts.push(...redditPrompts);
+    }
+    
+    if (CONFIG.sources.github) {
+      const githubPrompts = await scrapeGitHub();
+      newPrompts.push(...githubPrompts);
     }
     
     console.log(`\n🔍 Total new high-quality prompts found: ${newPrompts.length}`);
