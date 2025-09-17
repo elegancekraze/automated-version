@@ -541,85 +541,68 @@ function App() {
             </div>
           </div>
 
-          {/* Featured Coding Prompts Section - Always show for debugging */}
-          {(() => {
-            console.log('🔍 Checking for featured prompts...', {
-              totalPrompts: state.prompts.length,
-              featuredCount: state.prompts.filter(p => p.featured === true).length,
-              searchQuery: state.searchQuery,
-              selectedCategory: state.selectedCategory
-            });
+          {/* Featured Coding Prompts Section - DEBUG VERSION */}
+          <section className="mb-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 flex items-center">
+                  <span className="text-3xl mr-3">💻</span>
+                  Featured Coding Prompts (DEBUG)
+                </h2>
+                <p className="text-gray-600 mt-2">
+                  Debug: Total prompts: {state.prompts.length}, Featured: {state.prompts.filter(p => p.featured === true).length}
+                </p>
+              </div>
+              <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                New
+              </div>
+            </div>
             
-            const codingPrompts = state.prompts.filter(prompt => 
-              prompt.featured === true
-            ).slice(0, 6);
-            
-            console.log('💻 Featured coding prompts found:', codingPrompts.length, codingPrompts.map(p => p.title));
-            
-            return codingPrompts.length > 0 ? (
-              <section className="mb-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900 flex items-center">
-                      <span className="text-3xl mr-3">💻</span>
-                      Featured Coding Prompts
-                    </h2>
-                    <p className="text-gray-600 mt-2">
-                      Fresh coding prompts scraped from GitHub repositories - perfect for developers and programmers
-                    </p>
-                  </div>
-                  <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    New
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {codingPrompts.map((prompt) => (
-                    <div 
-                      key={prompt.id} 
-                      className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer border border-gray-200"
-                      onClick={() => handlePromptClick(prompt)}
-                    >
-                      <div className="flex items-start justify-between mb-2">
-                        <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
-                          {prompt.category}
-                        </span>
-                        <div className="flex items-center text-yellow-500 text-sm">
-                          ⭐ Featured
-                        </div>
-                      </div>
-                      <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">
-                        {prompt.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm line-clamp-3">
-                        {prompt.description || prompt.prompt_text}
-                      </p>
-                      {prompt.tags && prompt.tags.length > 0 && (
-                        <div className="flex flex-wrap gap-1 mt-3">
-                          {prompt.tags.slice(0, 3).map((tag, index) => (
-                            <span key={index} className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {state.prompts.filter(p => p.featured === true).slice(0, 6).map((prompt) => (
+                <div 
+                  key={prompt.id} 
+                  className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer border border-gray-200"
+                  onClick={() => handlePromptClick(prompt)}
+                >
+                  <div className="flex items-start justify-between mb-2">
+                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
+                      {prompt.category}
+                    </span>
+                    <div className="flex items-center text-yellow-500 text-sm">
+                      ⭐ Featured
                     </div>
-                  ))}
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">
+                    {prompt.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm line-clamp-3">
+                    {prompt.description || prompt.prompt_text}
+                  </p>
+                  {prompt.tags && prompt.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-1 mt-3">
+                      {prompt.tags.slice(0, 3).map((tag, index) => (
+                        <span key={index} className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                
-                <div className="text-center mt-6">
-                  <button
-                    onClick={() => {
-                      setState(prev => ({ ...prev, selectedCategory: 'programming' }));
-                    }}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
-                  >
-                    View All Coding Prompts
-                  </button>
-                </div>
-              </section>
-            ) : null;
-          })()}
+              ))}
+            </div>
+            
+            <div className="text-center mt-6">
+              <button
+                onClick={() => {
+                  setState(prev => ({ ...prev, selectedCategory: 'programming' }));
+                }}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+              >
+                View All Coding Prompts
+              </button>
+            </div>
+          </section>
 
           {/* Loading overlay for subsequent loads */}
           {state.loading && (
