@@ -7,7 +7,8 @@
     "tags": [],
     "source": "github:sankyn1/awesome-chatgpt-prompts",
     "featured": true,
-    "created_at": "2025-09-17T11:46:40.383Z"
+    "created_at": "2025-09-17T11:46:40.383Z",
+    "prompt_text": "chatgpt-prompts awesome-prompts seo-prompts ai-prompt-library prompt-engineering daily-prompts business-prompts writing-prompts coding-prompts ---"
   },
   {
     "id": "e7d3f007-f48f-4dce-a744-8633b34575f3",
@@ -17,7 +18,8 @@
     "tags": [],
     "source": "github:pezzolabs/pezzo",
     "featured": true,
-    "created_at": "2025-09-17T11:46:42.903Z"
+    "created_at": "2025-09-17T11:46:42.903Z",
+    "prompt_text": "[Click here to navigate to the Official Pezzo Documentation](https://docs.pezzo.ai/) In the documentation, you can find information on how to use Pezzo, its architecture, including tutorials and recipes for varius use cases and LLM providers."
   },
   {
     "id": "d8703744-946f-4d01-b8a0-f6526c28d2f7",
@@ -30,7 +32,8 @@
     ],
     "source": "github:pezzolabs/pezzo",
     "featured": true,
-    "created_at": "2025-09-17T11:46:42.903Z"
+    "created_at": "2025-09-17T11:46:42.903Z",
+    "prompt_text": "<table> <thead> <tr> <th>Feature</th> <th> <a href=\"https://www.npmjs.com/package/@pezzo/client\">Node.js</a> • <a href=\"https://docs.pezzo.ai/client/pezzo-client-node\">Docs</a> </th> <th> <a href=\"https://pypi.org/\">Python</a> • <a href=\"https://docs.pezzo.ai/client/pezzo-client-python\">Docs</a> </th> <th> <a href=\"https://github.com/pezzolabs/pezzo/issues/180\">LangChain</a> </th> </tr> </thead> <tbody> <tr> <td>Prompt Management</td> <td align=\"center\">✅</td> <td align=\"center\">✅</td> <td align=\"center\">✅</td> </tr> <tr> <td>Observability</td> <td align=\"center\">✅</td> <td align=\"center\">✅</td> <td align=\"center\">✅</td> </tr> <tr> <td>Caching</td> <td align=\"center\">✅</td> <td align=\"center\">✅</td> <td align=\"center\">✅</td> </tr> </tbody> </table> Looking for a client that's not listed here? [Open an issue](https://github.com/pezzolabs/pezzo/issues/new/choose) and let us know!"
   },
   {
     "id": "71581861-00cb-458b-9f4c-e9b77b314f56",
@@ -40,7 +43,8 @@
     "tags": [],
     "source": "github:pezzolabs/pezzo",
     "featured": true,
-    "created_at": "2025-09-17T11:46:42.903Z"
+    "created_at": "2025-09-17T11:46:42.903Z",
+    "prompt_text": "If you simply want to run the full Pezzo stack locally, check out [Running With Docker Compose](http://docs.pezzo.ai/introduction/docker-compose) in the documentation. If you want to run Pezzo in development mode, continue reading."
   },
   {
     "id": "264c6f65-d6ee-495e-8c73-490d0219c467",
@@ -52,7 +56,8 @@
     ],
     "source": "github:pezzolabs/pezzo",
     "featured": true,
-    "created_at": "2025-09-17T11:46:42.904Z"
+    "created_at": "2025-09-17T11:46:42.904Z",
+    "prompt_text": "Deploy Prisma migrations: npx dotenv-cli -e apps/server/.env -- npx prisma migrate deploy --schema apps/server/prisma/schema.prisma Run the server: npx nx serve server The server is now running. You can verify that by navigating to http://localhost:3000/api/healthz. In development mode, you want to run codegen in watch mode, so whenever you make changes to the schema, types are generated automatically. After running the server, run the following in a _separate terminal Window_: npm run graphql:codegen:watch This will connect [codegen](https://the-guild.dev/graphql/codegen/docs/getting-started) directly to the server and keep your GraphQL schema up-to-date as you make changes. Finally, you are ready to run the Pezzo Console: npx nx serve console That's it! The Pezzo Console is now accessible at http://localhost:4200 🚀"
   },
   {
     "id": "e25a8ab7-abd0-4502-adb1-02397232d0ca",
@@ -62,7 +67,8 @@
     "tags": [],
     "source": "github:pezzolabs/pezzo",
     "featured": true,
-    "created_at": "2025-09-17T11:46:42.904Z"
+    "created_at": "2025-09-17T11:46:42.904Z",
+    "prompt_text": "This repository's source code is available under the [Apache 2.0 License](LICENSE)."
   },
   {
     "id": "a7b98abb-da06-4643-b8c6-f8e42d5d00bf",
@@ -72,7 +78,8 @@
     "tags": [],
     "source": "github:microsoft/prompty",
     "featured": true,
-    "created_at": "2025-09-17T11:46:44.347Z"
+    "created_at": "2025-09-17T11:46:44.347Z",
+    "prompt_text": "Prompty is an asset class and format for LLM prompts designed to enhance observability, understandability, and portability for developers. The primary goal is to accelerate the developer inner loop. This repo contains the following:"
   },
   {
     "id": "314fd5b0-bdf0-43b5-84e9-3546cd4ad526",
@@ -82,7 +89,8 @@
     "tags": [],
     "source": "github:microsoft/prompty",
     "featured": true,
-    "created_at": "2025-09-17T11:46:44.348Z"
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "prompt_text": "This Visual Studio Code extension offers an intuitive prompt playground within VS Code to streamline the prompt engineering process. You can find the Prompty extension in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.prompty)."
   },
   {
     "id": "796fcf6e-85dd-4021-b757-1a8f5a8cd4a1",
@@ -92,7 +100,8 @@
     "tags": [],
     "source": "github:microsoft/prompty",
     "featured": true,
-    "created_at": "2025-09-17T11:46:44.348Z"
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "prompt_text": "Prompty standardizes prompts and their execution into a single asset. ![Language Spec](img/vscode/readme_lang_spec.png)"
   },
   {
     "id": "199d2d99-c104-4f0b-9e4e-ba7a7fe95614",
@@ -102,7 +111,8 @@
     "tags": [],
     "source": "github:microsoft/prompty",
     "featured": true,
-    "created_at": "2025-09-17T11:46:44.348Z"
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "prompt_text": "Quickly create a basic prompty by right-clicking in the VS Code explorer and selecting \"New Prompty.\" ![Quick Create](img/vscode/image-2.png)"
   },
   {
     "id": "9c232d64-845e-4031-b9f1-737e5ca040a4",
@@ -114,7 +124,8 @@
     ],
     "source": "github:microsoft/prompty",
     "featured": true,
-    "created_at": "2025-09-17T11:46:44.348Z"
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "prompt_text": "Preview prompty similar to markdown with dynamic template rendering while typing, allowing you to see the prompt that will be sent to the model. ![Preview](img/vscode/readme_preview.png)"
   },
   {
     "id": "f16bb754-0e01-4158-86bc-3c9d1a3a007d",
@@ -124,7 +135,8 @@
     "tags": [],
     "source": "github:microsoft/prompty",
     "featured": true,
-    "created_at": "2025-09-17T11:46:44.348Z"
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "prompt_text": "![Define Configuration](img/vscode/image-5.png) ![Switch Model Configuration](img/vscode/switchModelConfiguration.png)"
   },
   {
     "id": "b27a1ddc-e618-4d09-a7bb-f1f12cecfda4",
@@ -134,7 +146,8 @@
     "tags": [],
     "source": "github:microsoft/prompty",
     "featured": true,
-    "created_at": "2025-09-17T11:46:44.348Z"
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "prompt_text": "![ModelConfigurationSettings](img/vscode/modelConfigurationSettings.png)"
   },
   {
     "id": "29b35a7d-011a-4ff7-be62-f4b1ee039b00",
@@ -144,7 +157,8 @@
     "tags": [],
     "source": "github:microsoft/prompty",
     "featured": true,
-    "created_at": "2025-09-17T11:46:44.348Z"
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "prompt_text": "![Prompty Output](img/vscode/image-3.png)"
   },
   {
     "id": "fcebda5d-0bc9-45e8-8b7e-98834d97e1b1",
@@ -154,7 +168,8 @@
     "tags": [],
     "source": "github:microsoft/prompty",
     "featured": true,
-    "created_at": "2025-09-17T11:46:44.348Z"
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "prompt_text": "![Prompty Output (Verbose)](img/vscode/image-8.png)"
   },
   {
     "id": "6b0b7ce6-b813-4bb0-9438-8146b2669b61",
@@ -164,7 +179,8 @@
     "tags": [],
     "source": "github:microsoft/prompty",
     "featured": true,
-    "created_at": "2025-09-17T11:46:44.348Z"
+    "created_at": "2025-09-17T11:46:44.348Z",
+    "prompt_text": "Prompty is supported by popular orchestration frameworks:"
   },
   {
     "id": "f4bb50c4-8215-4bbc-912d-7b87fa1e8211",
@@ -179,7 +195,8 @@
     ],
     "source": "github:tarrinneal/CtCI_Book_Club",
     "featured": true,
-    "created_at": "2025-09-17T11:46:46.377Z"
+    "created_at": "2025-09-17T11:46:46.377Z",
+    "prompt_text": "Javascript prompts and solutions as well as testing for every question in Cracking The Coding Interview Make sure to read the chapter before you start answering the questions! There's also a hints file for each question, I'd recommend reading all of the hints after you find your own solution, they provide some good insights as to other solutions to the problems, and potentially more efficient ways of solving them To read the prompts and chapters yourself, check out the [book](<http://englishonlineclub.com/pdf/Cracking%20the%20Coding%20Interview%20-%20189%20Programming%20Questions%20and%20Solutions%20(6th%20Edition)%20[EnglishOnlineClub.com].pdf>), it is a great resource and is worth the purchase!"
   },
   {
     "id": "3aa36e06-ea0d-4e0e-9826-c36f2cf1de98",
@@ -189,7 +206,8 @@
     "tags": [],
     "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
     "featured": true,
-    "created_at": "2025-09-17T11:46:49.999Z"
+    "created_at": "2025-09-17T11:46:49.999Z",
+    "prompt_text": "This repository contains the public FTC SDK for the SKYSTONE (2019-2020) competition season. Formerly this software project was hosted [here](https://github.com/ftctechnh/ftc_app). Teams who are competing in the SKYSTONE Challenge should use this [new SKYSTONE repository](https://github.com/FIRST-Tech-Challenge/SKYSTONE) instead of the older (and no longer updated) ftc_app repository."
   },
   {
     "id": "c7cd21c0-1929-48ca-852f-41b2d2ef57c0",
@@ -199,7 +217,8 @@
     "tags": [],
     "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
     "featured": true,
-    "created_at": "2025-09-17T11:46:49.999Z"
+    "created_at": "2025-09-17T11:46:49.999Z",
+    "prompt_text": "This GitHub repository contains the source code that is used to build an Android app to control a FIRST Tech Challenge competition robot. To use this SDK, download/clone the entire project to your local computer."
   },
   {
     "id": "d1a431b6-2758-4d5e-90fd-666a26a972be",
@@ -212,7 +231,8 @@
     ],
     "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
     "featured": true,
-    "created_at": "2025-09-17T11:46:49.999Z"
+    "created_at": "2025-09-17T11:46:49.999Z",
+    "prompt_text": "If you are new to robotics or new to the FIRST Tech Challenge, then you should consider reviewing the [FTC Blocks Tutorial](https://github.com/FIRST-Tech-Challenge/SKYSTONE/wiki/Blocks-Tutorial) to get familiar with how to use the control system: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[FTC Blocks Online Tutorial](https://github.com/FIRST-Tech-Challenge/SKYSTONE/wiki/Blocks-Tutorial) Even if you are an advanced Java programmer, it is helpful to start with the [FTC Blocks tutorial](https://github.com/FIRST-Tech-Challenge/SKYSTONE/wiki/Blocks-Tutorial), and then migrate to the [OnBot Java Tool](https://github.com/FIRST-Tech-Challenge/SKYSTONE/wiki/OnBot-Java-Tutorial) or to [Android Studio](https://github.com/FIRST-Tech-Challenge/SKYSTONE/wiki/Android-Studio-Tutorial) afterwards."
   },
   {
     "id": "e70485c5-f277-4820-abe2-5b6c307b8617",
@@ -224,7 +244,8 @@
     ],
     "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
     "featured": true,
-    "created_at": "2025-09-17T11:46:49.999Z"
+    "created_at": "2025-09-17T11:46:49.999Z",
+    "prompt_text": "If you are an Android Studio programmer, there are several ways to download this repo. Note that if you use the Blocks or OnBot Java Tool to program your robot, then you do not need to download this repository."
   },
   {
     "id": "1609f879-10b8-4fca-a381-458d10745828",
@@ -234,7 +255,8 @@
     "tags": [],
     "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
     "featured": true,
-    "created_at": "2025-09-17T11:46:49.999Z"
+    "created_at": "2025-09-17T11:46:49.999Z",
+    "prompt_text": "FIRST maintains online documentation with information and tutorials on how to use the FIRST Tech Challenge software and robot control system. You can access this documentation using the following link: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SKYSTONE Online Documentation](https://github.com/FIRST-Tech-Challenge/SKYSTONE/wiki) Note that the online documentation is an \"evergreen\" document that is constantly being updated and edited. It contains the most current information about the FIRST Tech Challenge software and control system."
   },
   {
     "id": "d1708077-7b6a-4609-9d71-affbb27158df",
@@ -247,7 +269,8 @@
     ],
     "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
     "featured": true,
-    "created_at": "2025-09-17T11:46:50.000Z"
+    "created_at": "2025-09-17T11:46:50.000Z",
+    "prompt_text": "The Javadoc reference documentation for the FTC SDK is now available online. Click on the following link to view the FTC SDK Javadoc documentation as a live website: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[FTC Javadoc Documentation](https://first-tech-challenge.github.io/SkyStone/doc/javadoc/index.html) Documentation for the FTC SDK is also included with this repository. There is a subfolder called \"doc\" which contains several subfolders:"
   },
   {
     "id": "d64e9a83-fba9-4fd3-af07-1938a22a4477",
@@ -257,7 +280,8 @@
     "tags": [],
     "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
     "featured": true,
-    "created_at": "2025-09-17T11:46:50.001Z"
+    "created_at": "2025-09-17T11:46:50.001Z",
+    "prompt_text": "+ When enabled, the Expansion Hub can detect if it hasn't communicated with the Robot Controller over the FTDI (USB) connection. + If the Hub hasn't heard from the Robot Controller in a while, it will reset the FTDI connection. + This action helps system recover from some ESD-induced disruptions."
   },
   {
     "id": "356f67d9-c670-4dce-9010-48986bfe28dd",
@@ -267,6 +291,7 @@
     "tags": [],
     "source": "github:chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020",
     "featured": true,
-    "created_at": "2025-09-17T11:46:50.001Z"
+    "created_at": "2025-09-17T11:46:50.001Z",
+    "prompt_text": "+ These are enhanced methods that you can use when supported by the motor controller hardware. + The REV Robotics Expansion Hub supports these enhanced methods. + Enhanced methods include methods to get/set motor velocity (in encoder pulses per second), get/set PIDF coefficients, etc.."
   }
 ]

@@ -541,25 +541,26 @@ function App() {
             </div>
           </div>
 
-          {/* Featured Coding Prompts Section - DEBUG VERSION */}
-          <section className="mb-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 flex items-center">
-                  <span className="text-3xl mr-3">💻</span>
-                  Featured Coding Prompts (DEBUG)
-                </h2>
-                <p className="text-gray-600 mt-2">
-                  Debug: Total prompts: {state.prompts.length}, Featured: {state.prompts.filter(p => p.featured === true).length}
-                </p>
+          {/* Featured Coding Prompts Section */}
+          {state.prompts.length > 0 && (
+            <section className="mb-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 flex items-center">
+                    <span className="text-3xl mr-3">💻</span>
+                    Featured Coding Prompts
+                  </h2>
+                  <p className="text-gray-600 mt-2">
+                    Handpicked prompts for developers and programmers
+                  </p>
+                </div>
+                <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  New
+                </div>
               </div>
-              <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                New
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {state.prompts.filter(p => p.featured === true).slice(0, 6).map((prompt) => (
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {state.prompts.slice(0, 6).map((prompt) => (
                 <div 
                   key={prompt.id} 
                   className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer border border-gray-200"
@@ -592,17 +593,18 @@ function App() {
               ))}
             </div>
             
-            <div className="text-center mt-6">
-              <button
-                onClick={() => {
-                  setState(prev => ({ ...prev, selectedCategory: 'programming' }));
-                }}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
-              >
-                View All Coding Prompts
-              </button>
-            </div>
-          </section>
+              <div className="text-center mt-6">
+                <button
+                  onClick={() => {
+                    setState(prev => ({ ...prev, selectedCategory: 'programming' }));
+                  }}
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+                >
+                  View All Coding Prompts
+                </button>
+              </div>
+            </section>
+          )}
 
           {/* Loading overlay for subsequent loads */}
           {state.loading && (
