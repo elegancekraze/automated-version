@@ -544,12 +544,7 @@ function App() {
           {/* Featured Coding Prompts Section */}
           {!state.searchQuery && !state.selectedCategory && (() => {
             const codingPrompts = state.prompts.filter(prompt => 
-              prompt.featured && 
-              (prompt.category?.toLowerCase().includes('coding') || 
-               prompt.category?.toLowerCase().includes('programming') ||
-               prompt.category?.toLowerCase().includes('development') ||
-               prompt.category?.toLowerCase().includes('api') ||
-               prompt.category?.toLowerCase().includes('software'))
+              prompt.featured === true
             ).slice(0, 6);
             
             return codingPrompts.length > 0 ? (
