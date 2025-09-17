@@ -35,6 +35,9 @@ interface Prompt {
   author?: string;
   isNew?: boolean;
   hasCompleteContent?: boolean;
+  featured?: boolean;
+  priority?: string;
+  created_at?: string;
 }
 
 interface Category {
