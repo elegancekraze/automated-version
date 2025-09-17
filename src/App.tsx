@@ -541,11 +541,20 @@ function App() {
             </div>
           </div>
 
-          {/* Featured Coding Prompts Section */}
-          {!state.searchQuery && !state.selectedCategory && (() => {
+          {/* Featured Coding Prompts Section - Always show for debugging */}
+          {(() => {
+            console.log('🔍 Checking for featured prompts...', {
+              totalPrompts: state.prompts.length,
+              featuredCount: state.prompts.filter(p => p.featured === true).length,
+              searchQuery: state.searchQuery,
+              selectedCategory: state.selectedCategory
+            });
+            
             const codingPrompts = state.prompts.filter(prompt => 
               prompt.featured === true
             ).slice(0, 6);
+            
+            console.log('💻 Featured coding prompts found:', codingPrompts.length, codingPrompts.map(p => p.title));
             
             return codingPrompts.length > 0 ? (
               <section className="mb-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
