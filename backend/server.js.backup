@@ -1,0 +1,464 @@
+import express from 'express';
+import cors from 'cors';
+import fs from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { SchedulerService } from './src/services/scheduler-service.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Initialize scheduler service
+let scheduler = null;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Data file path
+const DATA_FILE = path.join(__dirname, 'data', 'prompts.json'); 
+      error: 'Scheduler not initialized' 
+    };
+    
+    res.json({
+      success: true,
+      data: schedulerStats
+    });
+  } catch (error) {
+    console.error('Scheduler stats error:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: 'Failed to fetch scheduler stats' 
+    });
+  }
+});
+
+// Hidden manual scheduler trigger endpoint
+app.post('/api/__internal__/scheduler/trigger', async (req, res) => {
+  if (!isAdminRequest(req)) {
+    return res.status(404).json({ error: 'Not found' });
+  }
+
+  try {
+    if (!scheduler) {
+      return res.status(503).json({ 
+        success: false, 
+        error: 'Scheduler not initialized' 
+      });
+    }
+    
+    // Trigger manual scraping
+    await scheduler.triggerRedditScraping();
+    
+    res.json({
+      success: true,
+      data: { message: 'Manual Reddit scraping triggered successfully' }
+    });
+  } catch (error) {
+    console.error('Manual scheduler trigger error:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: 'Failed to trigger manual scraping' 
+    });
+  }
+});onst app = express();
+const PORT = process.env.PORT || 3000;
+
+// Initialize scheduler service
+let scheduler = null;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Data file path
+const DATA_FILE = path.join(__dirname, 'data', 'prompts.json');
+
+// Helper function to read prompts
+async function readPrompts() {
+  try {
+    const data = await fs.readFile(DATA_FILE, 'utf8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error reading prompts:', error);
+    return [];
+  }
+}
+
+// Helper function to write prompts
+async function writePrompts(prompts) {
+  try {
+    await fs.writeFile(DATA_FILE, JSON.stringify(prompts, null, 2));
+    return true;
+  } catch (error) {
+    console.error('Error writing prompts:', error);
+    return false;
+  }
+}
+
+// Category mapping for URL-friendly keys
+const CATEGORY_MAPPING = {
+  'business___productivity': 'Business & Productivity',
+  'content___marketing': 'Content & Marketing', 
+  'development___technical': 'Development & Technical',
+  'creative___design': 'Creative & Design',
+  'analysis___research': 'Analysis & Research',
+  'official_openai': 'Official OpenAI'
+};
+
+// Reverse mapping for filtering
+const REVERSE_CATEGORY_MAPPING = Object.fromEntries(
+  Object.entries(CATEGORY_MAPPING).map(([key, value]) => [value, key])
+);
+
+// Public API Routes (SEO-friendly, no admin features exposed)
+
+// Get all prompts with SEO pagination
+app.get('/api/prompts', async (req, res) => {
+  try {
+    const prompts = await readPrompts();
+    const { 
+      page = 1, 
+      limit = 12, 
+      category = '', 
+      search = '',
+      sort = 'rating'
+    } = req.query;
+
+    let filtered = prompts;
+
+    // Filter by category
+    if (category && category !== 'all') {
+      const categoryName = CATEGORY_MAPPING[category];
+      if (categoryName) {
+        filtered = filtered.filter(p => p.category === categoryName);
+      }
+    }
+
+    // Filter by search
+    if (search) {
+      const searchTerm = search.toLowerCase();
+      filtered = filtered.filter(prompt => {
+        const searchableText = [
+          prompt.title,
+          prompt.description || '',
+          prompt.prompt_text,
+          (prompt.tags || []).join(' '),
+          prompt.category,
+          (prompt.use_cases || []).join(' ')
+        ].join(' ').toLowerCase();
+        
+        return searchableText.includes(searchTerm);
+      });
+    }
+
+    // Sort prompts
+    if (sort === 'rating') {
+      filtered.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+    } else if (sort === 'date') {
+      filtered.sort((a, b) => new Date(b.created_date || 0) - new Date(a.created_date || 0));
+    } else if (sort === 'title') {
+      filtered.sort((a, b) => a.title.localeCompare(b.title));
+    }
+
+    // Pagination
+    const pageNum = parseInt(page);
+    const limitNum = parseInt(limit);
+    const startIndex = (pageNum - 1) * limitNum;
+    const endIndex = startIndex + limitNum;
+    
+    const paginatedPrompts = filtered.slice(startIndex, endIndex);
+    
+    res.json({
+      success: true,
+      data: {
+        prompts: paginatedPrompts,
+        pagination: {
+          current_page: pageNum,
+          total_pages: Math.ceil(filtered.length / limitNum),
+          total_prompts: filtered.length,
+          per_page: limitNum,
+          has_next: endIndex < filtered.length,
+          has_prev: pageNum > 1
+        }
+      }
+    });
+  } catch (error) {
+    console.error('Error fetching prompts:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: 'Failed to fetch prompts' 
+    });
+  }
+});
+
+// Get categories with counts (SEO-friendly)
+app.get('/api/categories', async (req, res) => {
+  try {
+    const prompts = await readPrompts();
+    
+    // Count prompts per category
+    const categoryCounts = {};
+    prompts.forEach(prompt => {
+      const categoryKey = REVERSE_CATEGORY_MAPPING[prompt.category];
+      if (categoryKey) {
+        categoryCounts[categoryKey] = (categoryCounts[categoryKey] || 0) + 1;
+      }
+    });
+
+    // Build category response
+    const categories = {};
+    Object.entries(CATEGORY_MAPPING).forEach(([key, name]) => {
+      categories[key] = {
+        name,
+        count: categoryCounts[key] || 0,
+        description: getCategoryDescription(name),
+        color: getCategoryColor(name),
+        icon: getCategoryIcon(name)
+      };
+    });
+
+    res.json({
+      success: true,
+      data: { categories }
+    });
+  } catch (error) {
+    console.error('Error fetching categories:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: 'Failed to fetch categories' 
+    });
+  }
+});
+
+// Get single prompt by ID (SEO-friendly)
+app.get('/api/prompts/:id', async (req, res) => {
+  try {
+    const prompts = await readPrompts();
+    const prompt = prompts.find(p => p.id.toString() === req.params.id);
+    
+    if (!prompt) {
+      return res.status(404).json({
+        success: false,
+        error: 'Prompt not found'
+      });
+    }
+
+    res.json({
+      success: true,
+      data: { prompt }
+    });
+  } catch (error) {
+    console.error('Error fetching prompt:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: 'Failed to fetch prompt' 
+    });
+  }
+});
+
+// Get site statistics (SEO-friendly)
+app.get('/api/stats', async (req, res) => {
+  try {
+    const prompts = await readPrompts();
+    
+    const stats = {
+      total_prompts: prompts.length,
+      categories: Object.keys(CATEGORY_MAPPING).length,
+      latest_update: new Date().toISOString(),
+      average_rating: prompts.reduce((sum, p) => sum + (p.rating || 0), 0) / prompts.length
+    };
+
+    res.json({
+      success: true,
+      data: stats
+    });
+  } catch (error) {
+    console.error('Error fetching stats:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: 'Failed to fetch stats' 
+    });
+  }
+});
+
+// Hidden Admin Routes (not documented, not discoverable)
+// Admin authentication check
+function isAdminRequest(req) {
+  const adminKey = req.headers['x-admin-key'];
+  const expectedKey = process.env.ADMIN_KEY || 'admin-secret-key-2025';
+  return adminKey === expectedKey;
+}
+
+// Hidden admin scraping endpoint
+app.post('/api/__internal__/scrape/reddit', async (req, res) => {
+  if (!isAdminRequest(req)) {
+    return res.status(404).json({ error: 'Not found' });
+  }
+
+  try {
+    // Import Reddit scraper
+    const { redditScraper } = await import('./src/scrapers/reddit-scraper.js');
+    
+    const { subreddit = 'ChatGPT', limit = 10 } = req.body;
+    const newPrompts = await redditScraper.scrapePrompts(subreddit, limit);
+    
+    if (newPrompts.length > 0) {
+      const existingPrompts = await readPrompts();
+      const combinedPrompts = [...existingPrompts, ...newPrompts];
+      
+      // Remove duplicates
+      const uniquePrompts = combinedPrompts.filter((prompt, index, self) => 
+        index === self.findIndex(p => p.title === prompt.title)
+      );
+      
+      await writePrompts(uniquePrompts);
+      
+      res.json({
+        success: true,
+        data: {
+          scraped: newPrompts.length,
+          total: uniquePrompts.length,
+          new_prompts: newPrompts
+        }
+      });
+    } else {
+      res.json({
+        success: true,
+        data: { scraped: 0, message: 'No new prompts found' }
+      });
+    }
+  } catch (error) {
+    console.error('Admin scraping error:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: 'Scraping failed' 
+    });
+  }
+});
+
+// Hidden admin stats endpoint
+app.get('/api/__internal__/admin/stats', async (req, res) => {
+  if (!isAdminRequest(req)) {
+    return res.status(404).json({ error: 'Not found' });
+  }
+
+  try {
+    const prompts = await readPrompts();
+    
+    const stats = {
+      total_prompts: prompts.length,
+      by_category: {},
+      by_source: {},
+      recent_additions: prompts
+        .filter(p => p.created_date)
+        .sort((a, b) => new Date(b.created_date) - new Date(a.created_date))
+        .slice(0, 10)
+    };
+
+    // Category breakdown
+    prompts.forEach(prompt => {
+      stats.by_category[prompt.category] = (stats.by_category[prompt.category] || 0) + 1;
+    });
+
+    // Source breakdown
+    prompts.forEach(prompt => {
+      const source = prompt.source || 'manual';
+      stats.by_source[source] = (stats.by_source[source] || 0) + 1;
+    });
+
+    res.json({
+      success: true,
+      data: stats
+    });
+  } catch (error) {
+    console.error('Admin stats error:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: 'Failed to fetch admin stats' 
+    });
+  }
+});
+
+// Health check
+app.get('/health', (req, res) => {
+  res.json({ 
+    status: 'healthy', 
+    timestamp: new Date().toISOString(),
+    version: '1.0.0'
+  });
+});
+
+// Helper functions
+function getCategoryDescription(categoryName) {
+  const descriptions = {
+    'Business & Productivity': 'Prompts for business strategy, workflows, and professional productivity',
+    'Content & Marketing': 'Prompts for content creation, copywriting, and marketing strategies',
+    'Development & Technical': 'Prompts for programming, development, and technical problem solving',
+    'Creative & Design': 'Prompts for creative writing, design, and artistic endeavors',
+    'Analysis & Research': 'Prompts for data analysis, research, and critical thinking',
+    'Official OpenAI': 'Official prompts and examples from OpenAI'
+  };
+  return descriptions[categoryName] || '';
+}
+
+function getCategoryColor(categoryName) {
+  const colors = {
+    'Business & Productivity': 'blue',
+    'Content & Marketing': 'green',
+    'Development & Technical': 'purple',
+    'Creative & Design': 'pink',
+    'Analysis & Research': 'yellow',
+    'Official OpenAI': 'indigo'
+  };
+  return colors[categoryName] || 'gray';
+}
+
+function getCategoryIcon(categoryName) {
+  const icons = {
+    'Business & Productivity': 'briefcase',
+    'Content & Marketing': 'document-text',
+    'Development & Technical': 'code',
+    'Creative & Design': 'sparkles',
+    'Analysis & Research': 'chart-bar',
+    'Official OpenAI': 'cpu-chip'
+  };
+  return icons[categoryName] || 'tag';
+}
+
+// 404 handler for unknown routes
+app.use((req, res) => {
+  res.status(404).json({ error: 'Endpoint not found' });
+});
+
+// Initialize and start scheduler service
+async function startServer() {
+  try {
+    // Initialize scheduler service
+    scheduler = new SchedulerService();
+    await scheduler.initialize();
+    
+    // Start server
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`🚀 Automated server running on http://localhost:${PORT}`);
+      console.log(`📊 Public API: http://localhost:${PORT}/api/prompts`);
+      console.log(`🔒 Admin features hidden and secured`);
+      console.log(`⚡ Scheduler service: ${scheduler.getStats().is_running ? 'ACTIVE' : 'INACTIVE'}`);
+      console.log(`🕐 Next Reddit scraping: ${scheduler.getStats().nextRun || 'Soon'}`);
+    });
+  } catch (error) {
+    console.error('❌ Failed to start server with scheduler:', error);
+    // Fallback: start server without scheduler
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`🚀 Server running on http://localhost:${PORT} (without scheduler)`);
+    });
+  }
+}
+
+// Start the server
+startServer();
+
+export default app;

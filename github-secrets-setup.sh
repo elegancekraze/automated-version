@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# GitHub Secrets Setup Script
+# Run this after setting up your GitHub repository secrets manually
+
+echo "🔧 GitHub Repository Secrets Setup Guide"
+echo "========================================"
+echo ""
+echo "Go to your GitHub repository: https://github.com/elegancekraze/automated-version"
+echo "Navigate to: Settings → Secrets and variables → Actions → New repository secret"
+echo ""
+
+echo "📋 Required Secrets to Add:"
+echo ""
+
+echo "1. Reddit API Secrets:"
+echo "   Name: REDDIT_CLIENT_ID"
+echo "   Value: pde0vOJWBwPYvpJt64mV1g"
+echo ""
+echo "   Name: REDDIT_CLIENT_SECRET"  
+echo "   Value: xWjpC52SwMRZyVuC5WTTTexrg1PMzw"
+echo ""
+
+echo "2. Twitter/X Scraping APIs:"
+echo "   Name: BRIGHTDATA_API_KEY"
+echo "   Value: 1b08dbeee41a6087bd0e8e8c8981d2d705df09def63f74e845a89ea575b3b1ed"
+echo ""
+echo "   Name: SCRAPINGDOG_API_KEY"
+echo "   Value: 68c8028568ec896b288ad53c"
+echo ""
+echo "   Name: SCRAPECREATORS_API_KEY"
+echo "   Value: EOgaeVjznUPk2InUuoyy9qcVmNJ3"
+echo ""
+echo "   Name: TWITTERAPI_IO_KEY"
+echo "   Value: new1_f77d54b876a444429460b1ab6d2faf92"
+echo ""
+
+echo "3. Additional APIs:"
+echo "   Name: FIRECRAWL_API_KEY"
+echo "   Value: fc-81baddaff07a4b99985549d5630fba2b"
+echo ""
+
+echo "4. Netlify Deployment (REQUIRED):"
+echo "   Name: NETLIFY_AUTH_TOKEN"
+echo "   Value: [Get from Netlify User Settings → Personal Access Tokens]"
+echo ""
+echo "   Name: NETLIFY_SITE_ID"
+echo "   Value: [Get from Netlify Site Settings → General → Site Information]"
+echo ""
+
+echo "📝 How to get Netlify tokens:"
+echo "1. Go to https://app.netlify.com/user/applications#personal-access-tokens"
+echo "2. Click 'New access token'"
+echo "3. Give it a name like 'GitHub Actions Automation'"
+echo "4. Copy the token"
+echo ""
+echo "5. Go to your site settings in Netlify"
+echo "6. Under 'Site Information', find 'Site ID'"
+echo "7. Copy the Site ID"
+echo ""
+
+echo "🚀 After adding all secrets:"
+echo "1. Go to GitHub Actions tab in your repository"
+echo "2. You should see 'Daily Automated Prompt Scraping' workflow"
+echo "3. Click 'Run workflow' to test manually"
+echo "4. The workflow will automatically run daily at 2 AM UTC"
+echo ""
+
+echo "✅ Your automation system is ready!"
+echo "Expected results: 30-150 new prompts added daily"

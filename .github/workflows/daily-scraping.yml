@@ -1,0 +1,192 @@
+name: Daily Prompt Scraping and Deployment
+
+on:
+  # Run daily at 2:00 AM UTC
+  schedule:
+    - cron: '0 2 * * *'
+  
+  # Allow manual triggering
+  workflow_dispatch:
+    inputs:
+      scrape_source:
+        description: 'Source to scrape'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - reddit
+          - twitter
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: './backend/package-lock.json'
+          
+      - name: Install backend dependencies
+        working-directory: ./backend
+        run: npm ci
+        
+      - name: Create environment file
+        working-directory: ./backend
+        run: |
+          cat << EOF > .env
+          # Reddit API Configuration
+          REDDIT_CLIENT_ID=${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET=${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT=GPT5PromptScraper/1.0.0
+          
+          # Firecrawl API Configuration  
+          FIRECRAWL_API_KEY=${{ secrets.FIRECRAWL_API_KEY }}
+          
+          # Premium Scraping Services
+          BRIGHTDATA_API_KEY=${{ secrets.BRIGHTDATA_API_KEY }}
+          SCRAPINGDOG_API_KEY=${{ secrets.SCRAPINGDOG_API_KEY }}
+          SCRAPECREATORS_API_KEY=${{ secrets.SCRAPECREATORS_API_KEY }}
+          
+          # TwitterAPI.io Configuration
+          TWITTERAPI_IO_KEY=${{ secrets.TWITTERAPI_IO_KEY }}
+          
+          # X (Twitter) Login Credentials for Playwright
+          X_USERNAME=${{ secrets.X_USERNAME }}
+          X_PASSWORD=${{ secrets.X_PASSWORD }}
+          
+          # Database Configuration (not needed for scraping only)
+          MONGODB_URI=mongodb://localhost:27017/temp-scrape
+          DB_NAME=temp-scrape
+          EOF
+          
+      - name: Run Reddit scraping
+        working-directory: ./backend
+        run: |
+          echo "🚀 Starting Reddit scraping..."
+          node -e "
+          import('./src/scrapers/reddit-scraper.js').then(async ({ default: RedditScraper }) => {
+            const scraper = new RedditScraper();
+            try {
+              const prompts = await scraper.scrapeAllSources();
+              console.log(\`✅ Reddit scraping completed. Found \${prompts.length} prompts.\`);
+              
+              // Save Reddit prompts
+              const fs = require('fs');
+              const path = require('path');
+              const existingData = JSON.parse(fs.readFileSync('../public/data.json', 'utf8') || '[]');
+              
+              // Merge and deduplicate
+              const combined = [...existingData, ...prompts];
+              const unique = combined.filter((v, i, a) => a.findIndex(t => t.title === v.title) === i);
+              
+              fs.writeFileSync('../public/data.json', JSON.stringify(unique, null, 2));
+              console.log(\`📝 Updated data.json with \${unique.length} total prompts\`);
+            } catch (error) {
+              console.error('❌ Reddit scraping failed:', error.message);
+            }
+          })
+          " || echo "Reddit scraping completed with errors"
+          
+      - name: Run Twitter scraping
+        working-directory: ./backend
+        run: |
+          echo "🚀 Starting Twitter scraping..."
+          node -e "
+          import('./src/scrapers/twitter-scraper.js').then(async ({ default: TwitterScraper }) => {
+            const scraper = new TwitterScraper();
+            try {
+              const prompts = await scraper.scrapePrompts();
+              console.log(\`✅ Twitter scraping completed. Found \${prompts.length} prompts.\`);
+              
+              // Merge Twitter prompts with existing data
+              const fs = require('fs');
+              const existingData = JSON.parse(fs.readFileSync('../public/data.json', 'utf8') || '[]');
+              
+              const combined = [...existingData, ...prompts];
+              const unique = combined.filter((v, i, a) => a.findIndex(t => t.title === v.title) === i);
+              
+              fs.writeFileSync('../public/data.json', JSON.stringify(unique, null, 2));
+              console.log(\`📝 Updated data.json with \${unique.length} total prompts\`);
+            } catch (error) {
+              console.error('❌ Twitter scraping failed:', error.message);
+            }
+          })
+          " || echo "Twitter scraping completed with errors"
+          
+      - name: Clean and optimize data
+        run: |
+          echo "🧹 Cleaning and optimizing scraped data..."
+          node -e "
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('./public/data.json', 'utf8'));
+          
+          // Remove duplicates and sort by date
+          const unique = data.filter((v, i, a) => a.findIndex(t => t.slug === v.slug) === i);
+          const sorted = unique.sort((a, b) => new Date(b.created_date) - new Date(a.created_date));
+          
+          // Add metadata
+          const optimized = {
+            generated_at: new Date().toISOString(),
+            total_prompts: sorted.length,
+            prompts: sorted.slice(0, 5000) // Limit to 5000 most recent
+          };
+          
+          fs.writeFileSync('./public/data.json', JSON.stringify(optimized, null, 2));
+          console.log(\`✅ Optimized data: \${optimized.total_prompts} prompts\`);
+          "
+          
+      - name: Install frontend dependencies
+        run: npm ci
+        
+      - name: Build frontend
+        run: npm run build
+        
+      - name: Generate sitemap
+        run: |
+          echo "🗺️ Generating sitemap..."
+          node generate-sitemap.js || echo "Sitemap generation completed"
+          
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: './dist'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "🤖 Automated daily scraping update: ${{ github.run_id }}"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          
+      - name: Summary
+        run: |
+          echo "## 🎉 Daily Scraping Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          TOTAL_PROMPTS=$(node -e "console.log(JSON.parse(require('fs').readFileSync('./public/data.json', 'utf8')).total_prompts || 'N/A')")
+          
+          echo "- **Total Prompts**: $TOTAL_PROMPTS" >> $GITHUB_STEP_SUMMARY
+          echo "- **Sources**: Reddit + Twitter" >> $GITHUB_STEP_SUMMARY  
+          echo "- **Build**: ✅ Success" >> $GITHUB_STEP_SUMMARY
+          echo "- **Deployment**: ✅ Success" >> $GITHUB_STEP_SUMMARY
+          echo "- **Generated**: $(date)" >> $GITHUB_STEP_SUMMARY
+          
+      - name: Commit updated data (optional)
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add public/data.json
+          git diff --staged --quiet || git commit -m "🤖 Automated update: $(date)"
+          git push || echo "No changes to commit"

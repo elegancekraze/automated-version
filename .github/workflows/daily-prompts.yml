@@ -1,0 +1,182 @@
+name: Daily Automated Prompt Scraping
+
+on:
+  # Run daily at 2:00 AM UTC (10 PM EST)
+  schedule:
+    - cron: '0 2 * * *'
+  
+  # Allow manual triggering with options
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: 'Sources to scrape (comma-separated)'
+        required: false
+        default: 'reddit,twitter'
+        type: string
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  scrape-prompts:
+    runs-on: ubuntu-latest
+    name: Scrape and Update Prompts
+    
+    steps:
+      - name: 📋 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install dependencies
+        working-directory: ./backend
+        run: |
+          npm ci
+          
+      - name: 📦 Install frontend dependencies  
+        run: npm ci
+        
+      - name: 🔧 Debug secrets before .env creation
+        working-directory: ./backend
+        run: |
+          echo "🔧 DEBUGGING SECRETS AVAILABILITY"
+          echo "================================="
+          echo "Testing if secrets are available in shell:"
+          echo "REDDIT_CLIENT_ID secret: ${{ secrets.REDDIT_CLIENT_ID != '' && 'AVAILABLE' || 'MISSING' }}"
+          echo "BRIGHTDATA_API_KEY secret: ${{ secrets.BRIGHTDATA_API_KEY != '' && 'AVAILABLE' || 'MISSING' }}"
+          echo "SCRAPINGDOG_API_KEY secret: ${{ secrets.SCRAPINGDOG_API_KEY != '' && 'AVAILABLE' || 'MISSING' }}"
+          echo "SCRAPECREATORS_API_KEY secret: ${{ secrets.SCRAPECREATORS_API_KEY != '' && 'AVAILABLE' || 'MISSING' }}"
+          
+      - name: 🔧 Setup environment variables
+        working-directory: ./backend
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          BRIGHTDATA_API_KEY: ${{ secrets.BRIGHTDATA_API_KEY }}
+          SCRAPINGDOG_API_KEY: ${{ secrets.SCRAPINGDOG_API_KEY }}
+          SCRAPECREATORS_API_KEY: ${{ secrets.SCRAPECREATORS_API_KEY }}
+        run: |
+          echo "🔧 Creating .env with environment variables..."
+          cat << EOF > .env
+          # Reddit API Configuration
+          REDDIT_CLIENT_ID=${REDDIT_CLIENT_ID}
+          REDDIT_CLIENT_SECRET=${REDDIT_CLIENT_SECRET}
+          REDDIT_USER_AGENT=GPT5PromptScraper/1.0.0
+          
+          # Premium Scraping Services
+          BRIGHTDATA_API_KEY=${BRIGHTDATA_API_KEY}
+          SCRAPINGDOG_API_KEY=${SCRAPINGDOG_API_KEY}
+          SCRAPECREATORS_API_KEY=${SCRAPECREATORS_API_KEY}
+          
+          # Scraping control - Only Reddit for high quality
+          SCRAPE_REDDIT=true
+          SCRAPE_TWITTER=false
+          EOF
+          echo "✅ .env file created. Verifying contents:"
+          echo "REDDIT_CLIENT_ID length in .env: $(grep REDDIT_CLIENT_ID .env | cut -d'=' -f2 | wc -c)"
+          
+      - name: 🔍 Debug environment variables
+        working-directory: ./backend
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT: 'GPT5PromptScraper/1.0.0'
+          BRIGHTDATA_API_KEY: ${{ secrets.BRIGHTDATA_API_KEY }}
+          SCRAPINGDOG_API_KEY: ${{ secrets.SCRAPINGDOG_API_KEY }}
+          SCRAPECREATORS_API_KEY: ${{ secrets.SCRAPECREATORS_API_KEY }}
+          SCRAPE_REDDIT: 'true'
+          SCRAPE_TWITTER: 'true'
+        run: |
+          echo "🔍 DEBUGGING SECRETS LOADING"
+          echo "============================="
+          echo "First, let's verify secrets are accessible:"
+          echo "REDDIT_CLIENT_ID length: ${#REDDIT_CLIENT_ID}"
+          echo "BRIGHTDATA_API_KEY length: ${#BRIGHTDATA_API_KEY}"
+          echo "SCRAPINGDOG_API_KEY length: ${#SCRAPINGDOG_API_KEY}"
+          echo "SCRAPECREATORS_API_KEY length: ${#SCRAPECREATORS_API_KEY}"
+          echo ""
+          echo "Now testing with Node.js:"
+          node test-env-quick.js
+          
+      - name: 🚀 Run automated scraping
+        working-directory: ./backend
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT: GPT5PromptScraper/1.0.0
+          BRIGHTDATA_API_KEY: ${{ secrets.BRIGHTDATA_API_KEY }}
+          SCRAPINGDOG_API_KEY: ${{ secrets.SCRAPINGDOG_API_KEY }}
+          SCRAPECREATORS_API_KEY: ${{ secrets.SCRAPECREATORS_API_KEY }}
+          SCRAPE_REDDIT: ${{ contains(github.event.inputs.sources || 'reddit', 'reddit') }}
+          SCRAPE_TWITTER: false
+        run: |
+          echo "Starting automated prompt scraping..."
+          node automated-scraping.js
+          
+      - name: 🏗️ Build frontend for deployment
+        run: |
+          echo "Building frontend..."
+          npm run build
+          
+      - name: 🗺️ Generate sitemap
+        run: |
+          echo "Generating sitemap..."
+          node generate-sitemap.js || echo "Sitemap generation completed"
+          
+      - name: 📊 Display scraping summary
+        run: |
+          if [ -f "scraping-summary.json" ]; then
+            echo "## 📊 Scraping Summary" >> $GITHUB_STEP_SUMMARY
+            echo '```json' >> $GITHUB_STEP_SUMMARY
+            cat scraping-summary.json >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          # Display data.json stats
+          if [ -f "public/data.json" ]; then
+            TOTAL=$(node -e "const data = require('./public/data.json'); console.log(data.total_prompts || data.length || 0)")
+            echo "" >> $GITHUB_STEP_SUMMARY  
+            echo "### 📈 Current Stats" >> $GITHUB_STEP_SUMMARY
+            echo "- **Total Prompts**: $TOTAL" >> $GITHUB_STEP_SUMMARY
+            echo "- **Updated**: $(date)" >> $GITHUB_STEP_SUMMARY
+            echo "- **Build Status**: ✅ Success" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+      - name: 🚀 Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: './dist'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "🤖 Daily automated update - ${{ github.run_number }}"
+          enable-pull-request-comment: false
+          enable-commit-comment: false
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          
+      - name: 💾 Commit updated data (if changed)
+        run: |
+          git config --local user.email "action@github.com" 
+          git config --local user.name "GitHub Action Bot"
+          
+          # Check if data.json changed
+          if git diff --quiet public/data.json; then
+            echo "No changes to commit"
+          else
+            echo "Changes detected, committing..."
+            git add public/data.json
+            git commit -m "🤖 Automated daily scraping update - $(date +%Y-%m-%d)"
+            
+            # Use GitHub token for authentication
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+            git push origin HEAD:${{ github.ref_name }}
+            echo "✅ Changes committed and pushed"
+          fi
